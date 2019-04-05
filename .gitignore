@@ -1,1 +1,11 @@
 node_modules
+lib
+lib/bs/src/app.mlast.d
+lib/bs/src/app_test.mlast.d
+lib/bs/src/index.mlast.d
+lib/bs/src/login.cmt
+lib/bs/src/login.mlast
+lib/bs/src/login.mlast.d
+lib/bs/src/utils.cmt
+lib/bs/src/utils.mlast
+lib/bs/src/utils.mlast.d
