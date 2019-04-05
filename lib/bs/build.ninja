@@ -1,16 +1,16 @@
 bs_package_flags = -bs-package-name reason-scripts
-src_root_dir = /Users/elhj/Documents/Hackamon2019/PartyFinder
-bsc = /Users/elhj/Documents/Hackamon2019/PartyFinder/node_modules/bs-platform/lib/bsc.exe
-bsdep = /Users/elhj/Documents/Hackamon2019/PartyFinder/node_modules/bs-platform/lib/bsb_helper.exe
+src_root_dir = /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder
+bsc = /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/bs-platform/lib/bsc.exe
+bsdep = /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/bs-platform/lib/bsb_helper.exe
 warnings = -w -30-40+6+7+27+32..39+44+45+101
-bsc_flags = -bs-suffix -nostdlib -I '/Users/elhj/Documents/Hackamon2019/PartyFinder/node_modules/bs-platform/lib/ocaml' -color always
+bsc_flags = -bs-suffix -nostdlib -I '/Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/bs-platform/lib/ocaml' -color always
 ppx_flags = 
-bs_package_includes = -I /Users/elhj/Documents/Hackamon2019/PartyFinder/node_modules/reason-react/lib/ocaml -I /Users/elhj/Documents/Hackamon2019/PartyFinder/node_modules/@glennsl/bs-jest/lib/ocaml -I /Users/elhj/Documents/Hackamon2019/PartyFinder/node_modules/bs-fetch/lib/ocaml
+bs_package_includes = -I /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/reason-react/lib/ocaml -I /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/@glennsl/bs-jest/lib/ocaml -I /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/bs-fetch/lib/ocaml
 bs_package_dev_includes = 
 namespace = 
 bsb_dir_group = 0
-refmt = /Users/elhj/Documents/Hackamon2019/PartyFinder/node_modules/bs-platform/lib/refmt.exe
-reason_react_jsx = -ppx '/Users/elhj/Documents/Hackamon2019/PartyFinder/node_modules/bs-platform/lib/reactjs_jsx_ppx_2.exe'
+refmt = /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/bs-platform/lib/refmt.exe
+reason_react_jsx = -ppx '/Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/bs-platform/lib/reactjs_jsx_ppx_2.exe'
 refmt_flags = --print binary
 bsc_lib_includes = -I src
 rule build_ast_and_module_sets_from_re
@@ -35,9 +35,14 @@ build src/index.mlast.d : build_deps src/index.mlast
 build src/index.cmj |  $src_root_dir/src/index.bs.js src/index.cmi : build_cmj_cmi src/index.mlast
   bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
   bs_package_flags = $bs_package_flags  -bs-package-output commonjs:src
+build src/router.mlast : build_ast_and_module_sets_from_re $src_root_dir/src/router.re
+build src/router.mlast.d : build_deps src/router.mlast
+build src/router.cmj |  $src_root_dir/src/router.bs.js src/router.cmi : build_cmj_cmi src/router.mlast
+  bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
+  bs_package_flags = $bs_package_flags  -bs-package-output commonjs:src
 build src/app_test.mlast : build_ast_and_module_sets_from_re $src_root_dir/src/app_test.re
 build src/app_test.mlast.d : build_deps src/app_test.mlast
 build src/app_test.cmj |  $src_root_dir/src/app_test.bs.js src/app_test.cmi : build_cmj_cmi src/app_test.mlast
   bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
   bs_package_flags = $bs_package_flags  -bs-package-output commonjs:src
-build build.ninja : phony  ||  src/app_test.mlast.d src/index.mlast.d src/app.mlast.d
+build build.ninja : phony  ||  src/app_test.mlast.d src/router.mlast.d src/index.mlast.d src/app.mlast.d
