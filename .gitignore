@@ -9,3 +9,17 @@ lib/bs/src/login.mlast.d
 lib/bs/src/utils.cmt
 lib/bs/src/utils.mlast
 lib/bs/src/utils.mlast.d
+.merlin
+lib/bs/.bsbuild
+lib/bs/.bsdeps
+lib/bs/.ninja_log
+lib/bs/build.ninja
+lib/bs/src/app.cmt
+lib/bs/src/app.mlast
+lib/bs/src/app_test.cmt
+lib/bs/src/app_test.mlast
+lib/bs/src/index.cmt
+lib/bs/src/index.mlast
+lib/bs/src/router.cmt
+lib/bs/src/router.mlast
+lib/bs/src/router.mlast.d
