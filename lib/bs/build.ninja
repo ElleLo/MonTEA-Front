@@ -35,6 +35,16 @@ build src/index.mlast.d : build_deps src/index.mlast
 build src/index.cmj |  $src_root_dir/src/index.bs.js src/index.cmi : build_cmj_cmi src/index.mlast
   bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
   bs_package_flags = $bs_package_flags  -bs-package-output commonjs:src
+build src/login.mlast : build_ast_and_module_sets_from_re $src_root_dir/src/login.re
+build src/login.mlast.d : build_deps src/login.mlast
+build src/login.cmj |  $src_root_dir/src/login.bs.js src/login.cmi : build_cmj_cmi src/login.mlast
+  bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
+  bs_package_flags = $bs_package_flags  -bs-package-output commonjs:src
+build src/Utils.mlast : build_ast_and_module_sets_from_re $src_root_dir/src/Utils.re
+build src/Utils.mlast.d : build_deps src/Utils.mlast
+build src/Utils.cmj |  $src_root_dir/src/Utils.bs.js src/Utils.cmi : build_cmj_cmi src/Utils.mlast
+  bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
+  bs_package_flags = $bs_package_flags  -bs-package-output commonjs:src
 build src/router.mlast : build_ast_and_module_sets_from_re $src_root_dir/src/router.re
 build src/router.mlast.d : build_deps src/router.mlast
 build src/router.cmj |  $src_root_dir/src/router.bs.js src/router.cmi : build_cmj_cmi src/router.mlast
@@ -45,4 +55,4 @@ build src/app_test.mlast.d : build_deps src/app_test.mlast
 build src/app_test.cmj |  $src_root_dir/src/app_test.bs.js src/app_test.cmi : build_cmj_cmi src/app_test.mlast
   bsc_flags = $bsc_flags -bs-re-out -bs-super-errors
   bs_package_flags = $bs_package_flags  -bs-package-output commonjs:src
-build build.ninja : phony  ||  src/app_test.mlast.d src/router.mlast.d src/index.mlast.d src/app.mlast.d
+build build.ninja : phony  ||  src/app_test.mlast.d src/router.mlast.d src/Utils.mlast.d src/login.mlast.d src/index.mlast.d src/app.mlast.d
