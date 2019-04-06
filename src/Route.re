@@ -1,5 +1,5 @@
 type route =
-  | App
+  | Home
   | NotFound;
 
 type state = {route}; 
@@ -9,7 +9,7 @@ type action =
 
 let mapUrlToRoute = (url: ReasonReact.Router.url) =>
   switch url.path {
-  | ["app"] => App
+  | ["home"] => Home
   | _ => NotFound
   };
   
@@ -24,7 +24,7 @@ let component = ReasonReact.reducerComponent("Route");
 let make = (_children) => {
   ...component,
   reducer,
-  initialState: () => {route: App},
+  initialState: () => {route: Home},
   didMount: (self) => {
     let watchId =
       ReasonReact.Router.watchUrl(url =>
@@ -35,7 +35,7 @@ let make = (_children) => {
   render: self =>
     <div className="container scrollable-x column is-10">
       (switch (self.state.route){
-        | App => <App />
+        | Home => <Home />
         | NotFound => <div className="section">{ReasonReact.string("Page does not exist. ")}</div>
       }
       )

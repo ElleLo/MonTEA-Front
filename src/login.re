@@ -39,7 +39,7 @@ let make = _children => {
               <button className="block bg-teal-dark hover:bg-teal text-white font-bold py-2 px-4 rounded"
               onClick={_e => {
                 ReactDOMRe.renderToElementWithId(<App/>, "root",);
-                ReasonReact.Router.push("/app");
+                ReasonReact.Router.push("/home");
                 }}>
                 {str("Login")}
               </button>
