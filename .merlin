@@ -11,7 +11,8 @@ S C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\@glennsl\bs-jest\lib
 B C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\@glennsl\bs-jest\lib\ocaml
 S C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\bs-fetch\lib\ocaml
 B C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\bs-fetch\lib\ocaml
-
+S C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\@glennsl\bs-json\lib\ocaml
+B C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\@glennsl\bs-json\lib\ocaml
 S src
 B lib\bs\src
 ####BSB GENERATED: NO EDIT}

@@ -48,7 +48,7 @@ function make(_children) {
                                               className: "fas fa-home pr-0 md:pr-3"
                                             }), React.createElement("span", {
                                               className: "pb-1 md:pb-0 text-xs md:text-base text-grey-dark md:text-grey-light block md:inline-block"
-                                            }, Utils.str("home")))), React.createElement("li", {
+                                            }, Utils.str("Home")))), React.createElement("li", {
                                       className: "mr-3 flex-1"
                                     }, React.createElement("a", {
                                           className: match$1 ? "block py-1 md:py-3 pl-1 align-middle text-white no-underline border-b-2 border-orange-dark" : "block py-1 md:py-3 pl-1 align-middle text-grey-darkest no-underline hover:text-orange border-b-2 border-grey-darkest md:border-black hover:border-orange",
