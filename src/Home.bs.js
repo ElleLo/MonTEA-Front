@@ -38,68 +38,100 @@ function make(_children) {
                                     }, Utils.str("#academic")), React.createElement("span", {
                                       className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
                                     }, Utils.str("#free-food")))), React.createElement("div", {
-                              className: "md:w-1/3 overflow-hidden  w-full p-4"
-                            }, React.createElement("img", {
-                                  className: "w-full",
-                                  alt: "Sunset in the mountains",
-                                  src: "https://tailwindcss.com/img/card-top.jpg"
-                                }), React.createElement("div", {
-                                  className: "px-6 py-4 border border-grey-light"
-                                }, React.createElement("div", {
-                                      className: "font-bold text-xl mb-2"
-                                    }, Utils.str("The coldest sunset")), React.createElement("p", {
-                                      className: "text-grey-darker text-base"
-                                    }, Utils.str("this is a bunch of text lalallalalalala"))), React.createElement("div", {
-                                  className: "px-6 py-4"
-                                }, React.createElement("span", {
-                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                                    }, Utils.str("#photo")), React.createElement("span", {
-                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                                    }, Utils.str("#travel")), React.createElement("span", {
-                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
-                                    }, Utils.str("#winter")))), React.createElement("div", {
-                              className: "md:w-1/3 overflow-hidden border border-grey-light w-full p-4"
-                            }, React.createElement("img", {
-                                  className: "w-full",
-                                  alt: "Sunset in the mountains",
-                                  src: "https://tailwindcss.com/img/card-top.jpg"
-                                }), React.createElement("div", {
-                                  className: "px-6 py-4 border border-grey-light"
-                                }, React.createElement("div", {
-                                      className: "font-bold text-xl mb-2"
-                                    }, Utils.str("The coldest sunset")), React.createElement("p", {
-                                      className: "text-grey-darker text-base"
-                                    }, Utils.str("this is a bunch of text lalallalalalala"))), React.createElement("div", {
-                                  className: "px-6 py-4"
-                                }, React.createElement("span", {
-                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                                    }, Utils.str("#photo")), React.createElement("span", {
-                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                                    }, Utils.str("#travel")), React.createElement("span", {
-                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
-                                    }, Utils.str("#winter")))), React.createElement("div", {
                               className: "md:w-1/3 overflow-hidden w-full p-4"
                             }, React.createElement("div", {
                                   className: "border border-grey-light"
                                 }, React.createElement("img", {
-                                      className: "w-full",
+                                      className: "h-48",
                                       alt: "Sunset in the mountains",
-                                      src: "https://tailwindcss.com/img/card-top.jpg"
+                                      src: "https://scontent.fcbr1-1.fna.fbcdn.net/v/t1.0-9/28059157_946979332131457_7165184541920598166_n.jpg?_nc_cat=109&_nc_ht=scontent.fcbr1-1.fna&oh=5a6594412643437b10c91ba3e8816b7f&oe=5D3E8D49"
                                     }), React.createElement("div", {
                                       className: "px-6 py-4"
                                     }, React.createElement("div", {
                                           className: "font-bold text-xl mb-2"
-                                        }, Utils.str("The coldest sunset")), React.createElement("p", {
+                                        }, Utils.str("Monash NZSA Trivia Night")), React.createElement("p", {
                                           className: "text-grey-darker text-base"
-                                        }, Utils.str("this is a bunch of text lalallalalalala"))), React.createElement("div", {
+                                        }, Utils.str("Sun, Apr 7, 12:00pm-14:00pm")), React.createElement("p", {
+                                          className: "text-grey-darker text-base py-2"
+                                        }, Utils.str("E359, 20 Chancellors Walk"))), React.createElement("div", {
                                       className: "px-6 py-4"
                                     }, React.createElement("span", {
                                           className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                                        }, Utils.str("#photo")), React.createElement("span", {
+                                        }, Utils.str("#spiritual")), React.createElement("span", {
                                           className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                                        }, Utils.str("#travel")), React.createElement("span", {
+                                        }, Utils.str("#cultural"))))), React.createElement("div", {
+                              className: "md:w-1/3 overflow-hidden w-full p-4"
+                            }, React.createElement("div", {
+                                  className: "border border-grey-light"
+                                }, React.createElement("img", {
+                                      className: "h-48",
+                                      alt: "Sunset in the mountains",
+                                      src: "https://www.monashclubs.org/CMSModules/Avatars/CMSPages/GetAvatar.aspx?avatarguid=bda7da3e-79c2-4043-a601-c3ec064bb96a&maxsidesize=200"
+                                    }), React.createElement("div", {
+                                      className: "px-6 py-4"
+                                    }, React.createElement("div", {
+                                          className: "font-bold text-xl mb-2"
+                                        }, Utils.str("The Timeless Miracle with Br Jafar Hussain")), React.createElement("p", {
+                                          className: "text-grey-darker text-base"
+                                        }, Utils.str("Sun, Apr 7, 12:00pm-14:00pm")), React.createElement("p", {
+                                          className: "text-grey-darker text-base py-2"
+                                        }, Utils.str("S1 Lecture Theatre, 16 Rainforest Walk"))), React.createElement("div", {
+                                      className: "px-6 py-4"
+                                    }, React.createElement("span", {
+                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                        }, Utils.str("#social")), React.createElement("span", {
+                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                        }, Utils.str("#paid")), React.createElement("span", {
                                           className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
-                                        }, Utils.str("#winter"))))));
+                                        }, Utils.str("#competitive"))))), React.createElement("div", {
+                              className: "md:w-1/3 overflow-hidden w-full p-4"
+                            }, React.createElement("div", {
+                                  className: "border border-grey-light"
+                                }, React.createElement("img", {
+                                      className: "h-48",
+                                      alt: "Sunset in the mountains",
+                                      src: "https://www.monashclubs.org/CMSModules/Avatars/CMSPages/GetAvatar.aspx?avatarguid=15e8b216-7b22-4d76-90dc-b7bebd32d0db&maxsidesize=200"
+                                    }), React.createElement("div", {
+                                      className: "px-6 py-4"
+                                    }, React.createElement("div", {
+                                          className: "font-bold text-xl mb-2"
+                                        }, Utils.str("Oragami Night")), React.createElement("p", {
+                                          className: "text-grey-darker text-base"
+                                        }, Utils.str("Sun, Apr 7, 12:00pm-14:00pm")), React.createElement("p", {
+                                          className: "text-grey-darker text-base py-2"
+                                        }, Utils.str("Japanese Studies Centre Auditorium"))), React.createElement("div", {
+                                      className: "px-6 py-4"
+                                    }, React.createElement("span", {
+                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                        }, Utils.str("#social")), React.createElement("span", {
+                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                        }, Utils.str("#culture")), React.createElement("span", {
+                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+                                        }, Utils.str("#free-food"))))), React.createElement("div", {
+                              className: "md:w-1/3 overflow-hidden w-full p-4"
+                            }, React.createElement("div", {
+                                  className: "border border-grey-light"
+                                }, React.createElement("img", {
+                                      className: "h-48",
+                                      alt: "Sunset in the mountains",
+                                      src: "https://www.monashclubs.org/CMSModules/Avatars/CMSPages/GetAvatar.aspx?avatarguid=41671f9b-2184-4fb2-bb4e-92f1683a0d74&maxsidesize=200"
+                                    }), React.createElement("div", {
+                                      className: "px-6 py-4"
+                                    }, React.createElement("div", {
+                                          className: "font-bold text-xl mb-2"
+                                        }, Utils.str("Tech Industry Night")), React.createElement("p", {
+                                          className: "text-grey-darker text-base"
+                                        }, Utils.str("Sun, Apr 7, 12:00pm-14:00pm")), React.createElement("p", {
+                                          className: "text-grey-darker text-base py-2"
+                                        }, Utils.str("Campus Centre"))), React.createElement("div", {
+                                      className: "px-6 py-4"
+                                    }, React.createElement("span", {
+                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                        }, Utils.str("#social")), React.createElement("span", {
+                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                        }, Utils.str("#academic")), React.createElement("span", {
+                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+                                        }, Utils.str("#free-food"))))));
             }),
           /* initialState */component[/* initialState */10],
           /* retainedProps */component[/* retainedProps */11],
