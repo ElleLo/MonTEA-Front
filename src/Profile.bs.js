@@ -19,7 +19,69 @@ function make(_children) {
           /* willUpdate */component[/* willUpdate */7],
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (_self) {
-              return React.createElement("div", undefined, Utils.str("Profile"));
+              return React.createElement("div", {
+                          className: "container mx-auto w-full py-10 flex flex-wrap items-stretch"
+                        }, React.createElement("div", {
+                              className: "w-full py-4"
+                            }, React.createElement("div", {
+                                  className: "p-4"
+                                }, React.createElement("h1", {
+                                      className: "py-4"
+                                    }, Utils.str("Profile")))), React.createElement("div", {
+                              className: "w-full p-4 text-left"
+                            }, React.createElement("h2", undefined, Utils.str("Current tags")), React.createElement("div", {
+                                  className: "p-2"
+                                }, React.createElement("span", {
+                                      className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#social")), React.createElement("span", {
+                                      className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#culture")), React.createElement("span", {
+                                      className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#academic")), React.createElement("span", {
+                                      className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#free-food")))), React.createElement("div", {
+                              className: "w-full p-4 text-left"
+                            }, React.createElement("h2", undefined, Utils.str("Current clubs")), React.createElement("div", {
+                                  className: "p-2"
+                                }, React.createElement("span", {
+                                      className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#monash-sausage-club")), React.createElement("span", {
+                                      className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#monash-japanese-club")), React.createElement("span", {
+                                      className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#monash-new-zealand-student-association")), React.createElement("span", {
+                                      className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#monash-university-islamic-society")))), React.createElement("div", {
+                              className: "w-full p-4 text-left"
+                            }, React.createElement("h2", undefined, Utils.str("Other tags")), React.createElement("div", {
+                                  className: "p-2"
+                                }, React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#competitive")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#charity/volunteering")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#spiritual")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#free-drinks")))), React.createElement("div", {
+                              className: "w-full p-4 text-left"
+                            }, React.createElement("h2", undefined, Utils.str("Other clubs")), React.createElement("div", {
+                                  className: "p-2"
+                                }, React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#phantom-blood-club")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#kbbq-club")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#dog-appreciation-society")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#msg-noodle-club")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#keep-hydrated-club")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#sleep-deprived-at-monash")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
+                                    }, Utils.str("#monash-sausage-hunters")))));
             }),
           /* initialState */component[/* initialState */10],
           /* retainedProps */component[/* retainedProps */11],

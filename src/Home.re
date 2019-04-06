@@ -7,7 +7,7 @@ let make = _children => {
   render: _self =>
     <div className="container mx-auto w-full py-10 flex flex-wrap items-stretch">
       <div className="w-full text-center py-4">
-        <div className="py-4">
+        <div className="p-4">
           <h1 className="py-4"> {str("Welcome to Monash Party Finder, Harry")} </h1>
           <p className="">
             {str(
@@ -16,14 +16,15 @@ let make = _children => {
           </p>
           <p className="pb-4"> {str("You have subscribed to the following topics:")} </p>
           <span
-            className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
+            className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
             {str("#social")}
           </span>
           <span
-            className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
+            className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
             {str("#academic")}
           </span>
-          <span className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
+          <span
+            className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
             {str("#free-food")}
           </span>
         </div>
@@ -43,11 +44,11 @@ let make = _children => {
           //              </div>
           <div className="px-6 py-4">
             <span
-              className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
-              {str("#spiritual")}
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
+              {str("#hello")}
             </span>
             <span
-              className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
               {str("#cultural")}
             </span>
           </div>
@@ -68,15 +69,15 @@ let make = _children => {
           //              </div>
           <div className="px-6 py-4">
             <span
-              className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
               {str("#social")}
             </span>
             <span
-              className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
               {str("#paid")}
             </span>
             <span
-              className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
               {str("#competitive")}
             </span>
           </div>
@@ -97,15 +98,15 @@ let make = _children => {
           //              </div>
           <div className="px-6 py-4">
             <span
-              className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
               {str("#social")}
             </span>
             <span
-              className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
               {str("#culture")}
             </span>
             <span
-              className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
               {str("#free-food")}
             </span>
           </div>
@@ -126,15 +127,15 @@ let make = _children => {
           //              </div>
           <div className="px-6 py-4">
             <span
-              className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
               {str("#social")}
             </span>
             <span
-              className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
               {str("#academic")}
             </span>
             <span
-              className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
               {str("#free-food")}
             </span>
           </div>

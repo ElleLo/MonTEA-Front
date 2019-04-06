@@ -24,7 +24,7 @@ function make(_children) {
                         }, React.createElement("div", {
                               className: "w-full text-center py-4"
                             }, React.createElement("div", {
-                                  className: "py-4"
+                                  className: "p-4"
                                 }, React.createElement("h1", {
                                       className: "py-4"
                                     }, Utils.str("Welcome to Monash Party Finder, Harry")), React.createElement("p", {
@@ -32,11 +32,11 @@ function make(_children) {
                                     }, Utils.str("There are lots of great events coming up this week! Here are a selection of the events coming up this week based on your subscriptions.")), React.createElement("p", {
                                       className: "pb-4"
                                     }, Utils.str("You have subscribed to the following topics:")), React.createElement("span", {
-                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                      className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
                                     }, Utils.str("#social")), React.createElement("span", {
-                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                      className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
                                     }, Utils.str("#academic")), React.createElement("span", {
-                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+                                      className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
                                     }, Utils.str("#free-food")))), React.createElement("div", {
                               className: "md:w-1/3 overflow-hidden w-full p-4"
                             }, React.createElement("div", {
@@ -56,9 +56,9 @@ function make(_children) {
                                         }, Utils.str("E359, 20 Chancellors Walk"))), React.createElement("div", {
                                       className: "px-6 py-4"
                                     }, React.createElement("span", {
-                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                                        }, Utils.str("#spiritual")), React.createElement("span", {
-                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                          className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                        }, Utils.str("#hello")), React.createElement("span", {
+                                          className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
                                         }, Utils.str("#cultural"))))), React.createElement("div", {
                               className: "md:w-1/3 overflow-hidden w-full p-4"
                             }, React.createElement("div", {
@@ -78,11 +78,11 @@ function make(_children) {
                                         }, Utils.str("S1 Lecture Theatre, 16 Rainforest Walk"))), React.createElement("div", {
                                       className: "px-6 py-4"
                                     }, React.createElement("span", {
-                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                          className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
                                         }, Utils.str("#social")), React.createElement("span", {
-                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                          className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
                                         }, Utils.str("#paid")), React.createElement("span", {
-                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+                                          className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
                                         }, Utils.str("#competitive"))))), React.createElement("div", {
                               className: "md:w-1/3 overflow-hidden w-full p-4"
                             }, React.createElement("div", {
@@ -102,11 +102,11 @@ function make(_children) {
                                         }, Utils.str("Japanese Studies Centre Auditorium"))), React.createElement("div", {
                                       className: "px-6 py-4"
                                     }, React.createElement("span", {
-                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                          className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
                                         }, Utils.str("#social")), React.createElement("span", {
-                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                          className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
                                         }, Utils.str("#culture")), React.createElement("span", {
-                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+                                          className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
                                         }, Utils.str("#free-food"))))), React.createElement("div", {
                               className: "md:w-1/3 overflow-hidden w-full p-4"
                             }, React.createElement("div", {
@@ -126,11 +126,11 @@ function make(_children) {
                                         }, Utils.str("Campus Centre"))), React.createElement("div", {
                                       className: "px-6 py-4"
                                     }, React.createElement("span", {
-                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                          className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
                                         }, Utils.str("#social")), React.createElement("span", {
-                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                          className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
                                         }, Utils.str("#academic")), React.createElement("span", {
-                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+                                          className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
                                         }, Utils.str("#free-food"))))));
             }),
           /* initialState */component[/* initialState */10],
