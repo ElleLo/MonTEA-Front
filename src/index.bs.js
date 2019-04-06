@@ -20,6 +20,8 @@ function unregister_service_worker(prim) {
 
 ReactDOMRe.renderToElementWithId(ReasonReact.element(undefined, undefined, Login.make(/* array */[])), "root");
 
+ReasonReact.Router[/* push */0]("/login");
+
 ServiceWorker.unregister();
 
 exports.register_service_worker = register_service_worker;
