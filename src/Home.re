@@ -68,24 +68,27 @@ let make = _children => {
           </span>
         </div>
       </div>
-      <div className="md:w-1/3 overflow-hidden border border-grey-light w-full p-4">
-        <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains" />
-        <div className="px-6 py-4 border border-grey-light">
-          <div className="font-bold text-xl mb-2"> {str("The coldest sunset")} </div>
-          <p className="text-grey-darker text-base"> {str("this is a bunch of text lalallalalalala")} </p>
-        </div>
-        <div className="px-6 py-4">
-          <span
-            className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
-            {str("#photo")}
-          </span>
-          <span
-            className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
-            {str("#travel")}
-          </span>
-          <span className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
-            {str("#winter")}
-          </span>
+      <div className="md:w-1/3 overflow-hidden w-full p-4">
+        <div className="border border-grey-light">
+          <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains" />
+          <div className="px-6 py-4">
+            <div className="font-bold text-xl mb-2"> {str("The coldest sunset")} </div>
+            <p className="text-grey-darker text-base"> {str("this is a bunch of text lalallalalalala")} </p>
+          </div>
+          <div className="px-6 py-4">
+            <span
+              className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
+              {str("#photo")}
+            </span>
+            <span
+              className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
+              {str("#travel")}
+            </span>
+            <span
+              className="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
+              {str("#winter")}
+            </span>
+          </div>
         </div>
       </div>
     </div>,

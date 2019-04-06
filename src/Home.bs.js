@@ -78,26 +78,28 @@ function make(_children) {
                                     }, Utils.str("#travel")), React.createElement("span", {
                                       className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
                                     }, Utils.str("#winter")))), React.createElement("div", {
-                              className: "md:w-1/3 overflow-hidden border border-grey-light w-full p-4"
-                            }, React.createElement("img", {
-                                  className: "w-full",
-                                  alt: "Sunset in the mountains",
-                                  src: "https://tailwindcss.com/img/card-top.jpg"
-                                }), React.createElement("div", {
-                                  className: "px-6 py-4 border border-grey-light"
-                                }, React.createElement("div", {
-                                      className: "font-bold text-xl mb-2"
-                                    }, Utils.str("The coldest sunset")), React.createElement("p", {
-                                      className: "text-grey-darker text-base"
-                                    }, Utils.str("this is a bunch of text lalallalalalala"))), React.createElement("div", {
-                                  className: "px-6 py-4"
-                                }, React.createElement("span", {
-                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                                    }, Utils.str("#photo")), React.createElement("span", {
-                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                                    }, Utils.str("#travel")), React.createElement("span", {
-                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
-                                    }, Utils.str("#winter")))));
+                              className: "md:w-1/3 overflow-hidden w-full p-4"
+                            }, React.createElement("div", {
+                                  className: "border border-grey-light"
+                                }, React.createElement("img", {
+                                      className: "w-full",
+                                      alt: "Sunset in the mountains",
+                                      src: "https://tailwindcss.com/img/card-top.jpg"
+                                    }), React.createElement("div", {
+                                      className: "px-6 py-4"
+                                    }, React.createElement("div", {
+                                          className: "font-bold text-xl mb-2"
+                                        }, Utils.str("The coldest sunset")), React.createElement("p", {
+                                          className: "text-grey-darker text-base"
+                                        }, Utils.str("this is a bunch of text lalallalalalala"))), React.createElement("div", {
+                                      className: "px-6 py-4"
+                                    }, React.createElement("span", {
+                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                        }, Utils.str("#photo")), React.createElement("span", {
+                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                        }, Utils.str("#travel")), React.createElement("span", {
+                                          className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+                                        }, Utils.str("#winter"))))));
             }),
           /* initialState */component[/* initialState */10],
           /* retainedProps */component[/* retainedProps */11],
