@@ -20,36 +20,84 @@ function make(_children) {
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (_self) {
               return React.createElement("div", {
-                          className: "App"
+                          className: "container mx-auto w-full py-10 flex flex-wrap items-stretch"
                         }, React.createElement("div", {
-                              className: "container mx-auto h-full flex justify-center items-center"
+                              className: "w-full text-center py-4"
                             }, React.createElement("div", {
-                                  className: "w-1/2 text-center py-4"
+                                  className: "py-4"
                                 }, React.createElement("h1", {
-                                      className: "font-hairline mb-6 text-center"
-                                    }, Utils.str("Login to Party Finder")), React.createElement("div", {
-                                      className: "border-teal p-8 border-t-12 bg-white mb-6 rounded-lg shadow-lg"
-                                    }, React.createElement("div", {
-                                          className: "mb-4"
-                                        }, React.createElement("label", {
-                                              className: "font-bold text-grey-darker block mb-2"
-                                            }, Utils.str("Username or Email")), React.createElement("input", {
-                                              className: "block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow",
-                                              placeholder: "Your Username",
-                                              type: "text"
-                                            })), React.createElement("div", {
-                                          className: "mb-4"
-                                        }, React.createElement("label", {
-                                              className: "font-bold text-grey-darker block mb-2"
-                                            }, Utils.str("Password")), React.createElement("input", {
-                                              className: "block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow",
-                                              placeholder: "Password",
-                                              type: "text"
-                                            })), React.createElement("div", {
-                                          className: "flex items-center justify-center"
-                                        }, React.createElement("button", {
-                                              className: "block bg-teal-dark hover:bg-teal text-white font-bold py-2 px-4 rounded"
-                                            }, Utils.str("Login")))))));
+                                      className: "py-4"
+                                    }, Utils.str("Welcome to Monash Party Finder, Harry")), React.createElement("p", {
+                                      className: ""
+                                    }, Utils.str("There are lots of great events coming up this week! Here are a selection of the events coming up this week based on your subscriptions.")), React.createElement("p", {
+                                      className: "pb-4"
+                                    }, Utils.str("You have subscribed to the following topics:")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                    }, Utils.str("#social")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                    }, Utils.str("#academic")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+                                    }, Utils.str("#free-food")))), React.createElement("div", {
+                              className: "md:w-1/3 overflow-hidden  w-full p-4"
+                            }, React.createElement("img", {
+                                  className: "w-full",
+                                  alt: "Sunset in the mountains",
+                                  src: "https://tailwindcss.com/img/card-top.jpg"
+                                }), React.createElement("div", {
+                                  className: "px-6 py-4 border border-grey-light"
+                                }, React.createElement("div", {
+                                      className: "font-bold text-xl mb-2"
+                                    }, Utils.str("The coldest sunset")), React.createElement("p", {
+                                      className: "text-grey-darker text-base"
+                                    }, Utils.str("this is a bunch of text lalallalalalala"))), React.createElement("div", {
+                                  className: "px-6 py-4"
+                                }, React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                    }, Utils.str("#photo")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                    }, Utils.str("#travel")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+                                    }, Utils.str("#winter")))), React.createElement("div", {
+                              className: "md:w-1/3 overflow-hidden border border-grey-light w-full p-4"
+                            }, React.createElement("img", {
+                                  className: "w-full",
+                                  alt: "Sunset in the mountains",
+                                  src: "https://tailwindcss.com/img/card-top.jpg"
+                                }), React.createElement("div", {
+                                  className: "px-6 py-4 border border-grey-light"
+                                }, React.createElement("div", {
+                                      className: "font-bold text-xl mb-2"
+                                    }, Utils.str("The coldest sunset")), React.createElement("p", {
+                                      className: "text-grey-darker text-base"
+                                    }, Utils.str("this is a bunch of text lalallalalalala"))), React.createElement("div", {
+                                  className: "px-6 py-4"
+                                }, React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                    }, Utils.str("#photo")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                    }, Utils.str("#travel")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+                                    }, Utils.str("#winter")))), React.createElement("div", {
+                              className: "md:w-1/3 overflow-hidden border border-grey-light w-full p-4"
+                            }, React.createElement("img", {
+                                  className: "w-full",
+                                  alt: "Sunset in the mountains",
+                                  src: "https://tailwindcss.com/img/card-top.jpg"
+                                }), React.createElement("div", {
+                                  className: "px-6 py-4 border border-grey-light"
+                                }, React.createElement("div", {
+                                      className: "font-bold text-xl mb-2"
+                                    }, Utils.str("The coldest sunset")), React.createElement("p", {
+                                      className: "text-grey-darker text-base"
+                                    }, Utils.str("this is a bunch of text lalallalalalala"))), React.createElement("div", {
+                                  className: "px-6 py-4"
+                                }, React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                    }, Utils.str("#photo")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                    }, Utils.str("#travel")), React.createElement("span", {
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+                                    }, Utils.str("#winter")))));
             }),
           /* initialState */component[/* initialState */10],
           /* retainedProps */component[/* retainedProps */11],
