@@ -1,3 +1,3 @@
 src/index.cmj :
-src/login.cmj
-src/login.cmi
+src/Login.cmj
+src/Login.cmi

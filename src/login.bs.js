@@ -2,12 +2,71 @@
 'use strict';
 
 var App = require("./App.bs.js");
+var Block = require("bs-platform/lib/js/block.js");
+var Curry = require("bs-platform/lib/js/curry.js");
 var Utils = require("./Utils.bs.js");
 var React = require("react");
+var UserData = require("./UserData.bs.js");
 var ReactDOMRe = require("reason-react/src/ReactDOMRe.js");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
 
-var component = ReasonReact.statelessComponent("Login");
+var component = ReasonReact.reducerComponent("Login");
+
+function reducer(action, state) {
+  switch (action.tag | 0) {
+    case 0 : 
+        var params = action[1];
+        var method_ = action[0];
+        return /* SideEffects */Block.__(1, [(function (self) {
+                      return UserData.fetchData(method_, params, UserData.Decode[/* getLoginValidation */0], state, (function (payload) {
+                                    return Curry._1(self[/* send */3], /* Fetched */Block.__(1, [payload]));
+                                  }));
+                    })]);
+    case 1 : 
+        var payload = action[0][1];
+        var match = payload[/* validation */0] !== -1 || payload[/* validation */0] !== -2;
+        var match$1 = payload[/* validation */0] === -1;
+        var tmp;
+        if (match$1) {
+          tmp = "Invalid Login Details";
+        } else {
+          var match$2 = payload[/* validation */0] === -2;
+          tmp = match$2 ? "This account has been deactivated" : "";
+        }
+        return /* UpdateWithSideEffects */Block.__(2, [
+                  /* record */[
+                    /* username */state[/* username */0],
+                    /* password */state[/* password */1],
+                    /* userId */match ? payload[/* validation */0] : 0,
+                    /* loginError */tmp
+                  ],
+                  (function (self) {
+                      var match = self[/* state */1][/* loginError */3] === "";
+                      if (match) {
+                        ReactDOMRe.renderToElementWithId(ReasonReact.element(undefined, undefined, App.make(/* array */[])), "root");
+                        return ReasonReact.Router[/* push */0]("/home");
+                      } else {
+                        return /* () */0;
+                      }
+                    })
+                ]);
+    case 2 : 
+        return /* Update */Block.__(0, [/* record */[
+                    /* username */action[0],
+                    /* password */state[/* password */1],
+                    /* userId */state[/* userId */2],
+                    /* loginError */state[/* loginError */3]
+                  ]]);
+    case 3 : 
+        return /* Update */Block.__(0, [/* record */[
+                    /* username */state[/* username */0],
+                    /* password */action[0],
+                    /* userId */state[/* userId */2],
+                    /* loginError */state[/* loginError */3]
+                  ]]);
+    
+  }
+}
 
 function make(_children) {
   return /* record */[
@@ -20,7 +79,8 @@ function make(_children) {
           /* willUnmount */component[/* willUnmount */6],
           /* willUpdate */component[/* willUpdate */7],
           /* shouldUpdate */component[/* shouldUpdate */8],
-          /* render */(function (_self) {
+          /* render */(function (self) {
+              var match = self[/* state */1][/* loginError */3] === "";
               return React.createElement("div", {
                           className: "App"
                         }, React.createElement("div", {
@@ -31,9 +91,9 @@ function make(_children) {
                                       className: "font-hairline mb-6 text-center"
                                     }, Utils.str("Login to Party Finder")), React.createElement("div", {
                                       className: "border-teal p-8 border-t-12 bg-white mb-6 rounded-lg shadow-lg"
-                                    }, React.createElement("p", {
-                                          className: "font-sans text-lg text-red-dark text-center"
-                                        }, Utils.str("Error")), React.createElement("div", {
+                                    }, match ? React.createElement("p", undefined) : React.createElement("p", {
+                                            className: "font-sans text-lg text-red-dark text-center"
+                                          }, Utils.str("Error")), React.createElement("div", {
                                           className: "mb-4"
                                         }, React.createElement("label", {
                                               className: "font-bold text-grey-darker block mb-2"
@@ -59,13 +119,21 @@ function make(_children) {
                                                 })
                                             }, Utils.str("Login")))))));
             }),
-          /* initialState */component[/* initialState */10],
+          /* initialState */(function (param) {
+              return /* record */[
+                      /* username */"",
+                      /* password */"",
+                      /* userId */-1,
+                      /* loginError */""
+                    ];
+            }),
           /* retainedProps */component[/* retainedProps */11],
-          /* reducer */component[/* reducer */12],
+          /* reducer */reducer,
           /* jsElementWrapped */component[/* jsElementWrapped */13]
         ];
 }
 
 exports.component = component;
+exports.reducer = reducer;
 exports.make = make;
 /* component Not a pure module */

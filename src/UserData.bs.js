@@ -4,6 +4,7 @@
 var Curry = require("bs-platform/lib/js/curry.js");
 var Fetch = require("bs-fetch/src/Fetch.js");
 var Caml_option = require("bs-platform/lib/js/caml_option.js");
+var Json_decode = require("@glennsl/bs-json/src/Json_decode.bs.js");
 
 var id = /* record */[/* contents */0.0];
 
@@ -11,6 +12,12 @@ function idGenerator(param) {
   id[0] += 1.0;
   return /* () */0;
 }
+
+function getLoginValidation(json) {
+  return /* record */[/* validation */Json_decode.field("result", Json_decode.$$int, json)];
+}
+
+var Decode = /* module */[/* getLoginValidation */getLoginValidation];
 
 function jsonRpcRequestPayload(method_, params) {
   var payload = { };
@@ -45,6 +52,7 @@ function fetchData(method_, params, decodeType, update, callback) {
 
 exports.id = id;
 exports.idGenerator = idGenerator;
+exports.Decode = Decode;
 exports.jsonRpcRequestPayload = jsonRpcRequestPayload;
 exports.fetchData = fetchData;
 /* No side effect */

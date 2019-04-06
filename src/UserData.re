@@ -2,7 +2,19 @@ let id: ref(float) = ref(0.0);
 
 let idGenerator = () => {
     id := id^ +. 1.0;
-}
+};
+
+type loginValidationData = {
+    validation: int
+};
+
+module Decode = {
+
+let getLoginValidation = json: loginValidationData =>
+        Json.Decode.{
+            validation: json |> field("result", int)
+        }
+};
 
 let jsonRpcRequestPayload = (method, params) => {
   let payload = Js.Dict.empty();

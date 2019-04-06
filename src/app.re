@@ -14,6 +14,5 @@ let make = (_children) => {
       <div className="md:w-4/5">
         <Route />
       </div>
-      
     </div>,
 };

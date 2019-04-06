@@ -11,6 +11,8 @@ S /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/@glennsl/bs-je
 B /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/@glennsl/bs-jest/lib/ocaml
 S /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/bs-fetch/lib/ocaml
 B /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/bs-fetch/lib/ocaml
+S /Users/elhj/node_modules/@glennsl/bs-json/lib/ocaml
+B /Users/elhj/node_modules/@glennsl/bs-json/lib/ocaml
 S src
 B lib/bs/src
 ####BSB GENERATED: NO EDIT}
