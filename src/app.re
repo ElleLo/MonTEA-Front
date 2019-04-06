@@ -7,8 +7,13 @@ let component = ReasonReact.statelessComponent("App");
 let make = (_children) => {
   ...component,
   render: _self =>
-    <div className="App">
-      <Route />
-      <Menu />
+    <div className="App flex mb-5">
+      <div className="md:w-1/5">
+        <Menu />
+      </div>
+      <div className="md:w-4/5">
+        <Route />
+      </div>
+      
     </div>,
 };
