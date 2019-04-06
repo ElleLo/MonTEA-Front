@@ -27,7 +27,7 @@ function make(_children) {
                                   className: "p-4"
                                 }, React.createElement("h1", {
                                       className: "py-4"
-                                    }, Utils.str("Profile")))), React.createElement("div", {
+                                    }, Utils.str("Profile"))), React.createElement("p", undefined, Utils.str("Here you can manage your subscriptions to particular events"))), React.createElement("div", {
                               className: "w-full p-4 text-left"
                             }, React.createElement("h2", undefined, Utils.str("Current tags")), React.createElement("div", {
                                   className: "p-2"
