@@ -5,4 +5,5 @@
 
 ReactDOMRe.renderToElementWithId(<Login />, "root");
 
+ReasonReact.Router.push("/login");
 unregister_service_worker();
