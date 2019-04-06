@@ -1,11 +1,11 @@
 open Utils;
 
-let component = ReasonReact.statelessComponent("Map");
+let component = ReasonReact.statelessComponent("Profile");
 
 let make = _children => {
   ...component,
   render: _self =>
     <div>
-        {str("Map")}
+        {str("Profile")}
     </div>,
 };

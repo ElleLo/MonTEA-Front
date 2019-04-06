@@ -2,8 +2,7 @@
 
 [@bs.module "./serviceWorker"] external register_service_worker: unit => unit = "register";
 [@bs.module "./serviceWorker"] external unregister_service_worker: unit => unit = "unregister";
+ReactDOMRe.renderToElementWithId(<Login />, "root");
 
-ReactDOMRe.renderToElementWithId(<Home />, "root");
-
-//ReasonReact.Router.push("/login");
+ReasonReact.Router.push("/login");
 unregister_service_worker();

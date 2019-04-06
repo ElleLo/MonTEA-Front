@@ -1,4 +1,12 @@
 open Utils;
+open Data;
+
+type state = {
+  username: string,
+  password: string,
+  loginError: string,
+
+}
 
 let component = ReasonReact.statelessComponent("Login");
 
@@ -10,6 +18,7 @@ let make = _children => {
         <div className="w-1/2 text-center py-4">
           <h1 className="font-hairline mb-6 text-center"> {str("Login to Party Finder")} </h1>
           <div className="border-teal p-8 border-t-12 bg-white mb-6 rounded-lg shadow-lg">
+          <p className="font-sans text-lg text-red-dark text-center">{str("Error")}</p>
             <div className="mb-4">
               <label className="font-bold text-grey-darker block mb-2"> {str("Username or Email")} </label>
               <input
@@ -27,7 +36,11 @@ let make = _children => {
               />
             </div>
             <div className="flex items-center justify-center">
-              <button className="block bg-teal-dark hover:bg-teal text-white font-bold py-2 px-4 rounded">
+              <button className="block bg-teal-dark hover:bg-teal text-white font-bold py-2 px-4 rounded"
+              onClick={_e => {
+                ReactDOMRe.renderToElementWithId(<App/>, "root",);
+                ReasonReact.Router.push("/home");
+                }}>
                 {str("Login")}
               </button>
             </div>
