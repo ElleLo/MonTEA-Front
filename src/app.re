@@ -4,7 +4,7 @@
 
 let component = ReasonReact.statelessComponent("App");
 
-let make = (_children) => {
+let make = (~userId, _children) => {
   ...component,
   render: _self =>
     <div className="App flex mb-5">
@@ -12,7 +12,7 @@ let make = (_children) => {
         <Menu />
       </div>
       <div className="md:w-4/5">
-        <Route />
+        <Route userId/>
       </div>
     </div>,
 };

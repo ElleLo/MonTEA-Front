@@ -8,7 +8,38 @@ type loginValidationData = {
     validation: int
 };
 
+type eventsData = {
+    events: array(array(string)),
+    sub_tags: array(array(string)),
+    sub_clubs: array(array(string)),
+    name: string
+};
+
+type profileData = {
+    subTags: array(array(string)),
+    subClubs: array(array(string)),
+    unsubTags: array(array(string)),
+    unsubClubs: array(array(string))
+
+};
+
 module Decode = {
+
+let getProfileData = json: profileData =>
+    Json.Decode.{
+        subTags: json |> at(["result", "sub_tags"], array(array(string))),
+        subClubs:  json |> at(["result", "sub_clubs"], array(array(string))),
+        unsubTags:  json |> at(["result", "unsub_tags"], array(array(string))),
+        unsubClubs:  json |> at(["result", "unsub_clubs"], array(array(string))),
+    }
+
+let getEventData = json: eventsData =>
+    Json.Decode.{
+        events: json |> at(["result", "events"], array(array(string))),
+        sub_tags: json |> at(["result", "sub_tags"], array(array(string))),
+        sub_clubs: json |> at(["result", "sub_clubs"], array(array(string))),
+        name: json |> at(["result", "name"], string),
+    }
 
 let getLoginValidation = json: loginValidationData =>
         Json.Decode.{

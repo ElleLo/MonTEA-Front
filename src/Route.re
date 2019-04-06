@@ -27,7 +27,7 @@ let reducer = (action, _state) =>
 
 let component = ReasonReact.reducerComponent("Route");
 
-let make = (_children) => {
+let make = (~userId, _children) => {
   ...component,
   reducer,
   initialState: () => {route: Home},
@@ -41,10 +41,10 @@ let make = (_children) => {
   render: self =>
     <div className="container scrollable-x column is-10">
       (switch (self.state.route){
-        | Home => <Home />
+        | Home => <Home userId/>
         | YourEvents => <YourEvents />
         | Map => <Map />
-        | Profile => <Profile />
+        | Profile => <Profile userId/>
         | NotFound => <div className="section">{ReasonReact.string("Page does not exist. ")}</div>
       }
       )

@@ -52,7 +52,7 @@ function reducer(action, _state) {
 
 var component = ReasonReact.reducerComponent("Route");
 
-function make(_children) {
+function make(userId, _children) {
   return /* record */[
           /* debugName */component[/* debugName */0],
           /* reactClassInternal */component[/* reactClassInternal */1],
@@ -75,7 +75,7 @@ function make(_children) {
               var tmp;
               switch (match) {
                 case 0 : 
-                    tmp = ReasonReact.element(undefined, undefined, Home.make(/* array */[]));
+                    tmp = ReasonReact.element(undefined, undefined, Home.make(userId, /* array */[]));
                     break;
                 case 1 : 
                     tmp = ReasonReact.element(undefined, undefined, YourEvents.make(/* array */[]));
@@ -84,7 +84,7 @@ function make(_children) {
                     tmp = ReasonReact.element(undefined, undefined, $$Map.make(/* array */[]));
                     break;
                 case 3 : 
-                    tmp = ReasonReact.element(undefined, undefined, Profile.make(/* array */[]));
+                    tmp = ReasonReact.element(undefined, undefined, Profile.make(userId, /* array */[]));
                     break;
                 case 4 : 
                     tmp = React.createElement("div", {

@@ -13,7 +13,7 @@ var logo = LogoSvg;
 
 var component = ReasonReact.statelessComponent("App");
 
-function make(_children) {
+function make(userId, _children) {
   return /* record */[
           /* debugName */component[/* debugName */0],
           /* reactClassInternal */component[/* reactClassInternal */1],
@@ -31,7 +31,7 @@ function make(_children) {
                               className: "md:w-1/5"
                             }, ReasonReact.element(undefined, undefined, Menu.make(/* array */[]))), React.createElement("div", {
                               className: "md:w-4/5"
-                            }, ReasonReact.element(undefined, undefined, Route.make(/* array */[]))));
+                            }, ReasonReact.element(undefined, undefined, Route.make(userId, /* array */[]))));
             }),
           /* initialState */component[/* initialState */10],
           /* retainedProps */component[/* retainedProps */11],

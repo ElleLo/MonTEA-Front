@@ -1,145 +1,207 @@
 open Utils;
+open UserData;
 
-let component = ReasonReact.statelessComponent("Home");
+let tableKey: ref(int) = ref(0);
 
-let make = _children => {
+type eventInfo = {
+  event_id: string,
+  event_name: string,
+  event_date: string,
+  event_startTime: string,
+  event_endTime: string,
+  event_image: string,
+  event_host: string,
+  event_tags: array(string)
+}
+
+type state = {
+  data:option(eventsData),
+  events: array(array(eventInfo)),
+  name: string,
+  sub_tags: array(array(string)),
+  sub_clubs: array(array(string))
+}
+
+type action =
+    | Fetch(string, array(string))
+    | Fetched((state, eventsData))
+
+let component = ReasonReact.reducerComponent("Home");
+
+let createEventArray = (eventList) => {
+    ArrayLabels.length(eventList) === 0?
+    [|{
+        event_id: "-1",
+        event_name: "",
+        event_date: "",
+        event_startTime: "",
+        event_endTime: "",
+        event_image: "",
+        event_host: "",
+        event_tags: [||]
+    }|]
+    :Array.map(array => {
+        event_id: array[0],
+        event_name: array[1],
+        event_date: array[7],
+        event_startTime: array[5],
+        event_endTime: array[6],
+        event_image: array[9],
+        event_host: array[3],
+        event_tags: {
+          Js.String.split(",", Js.String.slice(0, Js.String.length(array[10])-1, array[10]))
+          }
+    }, eventList)
+};
+
+let reducer = (action, state) =>
+    switch(action){
+        | Fetch(method, params) => ReasonReact.SideEffects(self => fetchData(
+            method, 
+            params, 
+            Decode.getEventData, 
+            state, 
+            payload => self.send(Fetched(payload))
+            ))
+        | Fetched((_state, payload)) => ReasonReact.Update({
+            data: Some(payload),
+            events: {[|payload.events[0][0] != "-1" ? createEventArray(payload.events) : createEventArray([||])|]},
+            name: payload.name,
+            sub_tags: payload.sub_tags,
+            sub_clubs: payload.sub_clubs
+        })
+    }
+
+module EventItem = {
+  let component = ReasonReact.statelessComponent("EventItem");
+  
+  let make = (~item, _children) => {
+  // let make = (_children) => {
+    ...component,
+    render: _self =>
+      <div className="md:w-1/3 overflow-hidden w-full p-4">
+        <div className="border border-grey-light">
+          <img
+            className="h-48"
+            src={item.event_image}
+          />
+          <div className="px-6 py-4">
+            <div className="font-bold text-xl mb-2"> {str(item.event_name)} </div>
+            <p className="text-grey-darker text-base"> {str(item.event_date ++ ", " ++ item.event_startTime ++ " - " ++ item.event_endTime)} </p>
+            <p className="text-grey-darker text-base py-2"> {str("E359, 20 Chancellors Walk")} </p>
+          </div>
+          <div className="px-6 py-4">
+            (
+            Array.map(item => {
+                  incrementId(tableKey);
+                      <span
+                        key=(string_of_int(tableKey^))
+                        className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
+                        {str("#" ++ item)}
+                      </span>
+              }, item.event_tags)
+              |>ReasonReact.array 
+          )
+          </div>
+        </div>
+      </div>
+  }
+}
+
+let make = (~userId, _children) => {
   ...component,
-  render: _self =>
+  initialState: () => {
+    data: None,
+    events: [||],
+    name: "(Loading User)",
+    sub_tags: [||],
+    sub_clubs: [||]
+  },
+  reducer,
+  didMount: self => self.send(Fetch("chronological_order_events", [|userId|])),
+  render: self =>
     <div className="container mx-auto w-full py-10 flex flex-wrap items-stretch">
       <div className="w-full text-center py-4">
         <div className="p-4">
-          <h1 className="py-4"> {str("Welcome to Monash Party Finder, Harry")} </h1>
+          <h1 className="py-4"> {str("Welcome to MONTEA, " ++ self.state.name)} </h1>
           <p className="">
             {str(
                "There are lots of great events coming up this week! Here are a selection of the events coming up this week based on your subscriptions.",
              )}
           </p>
           <p className="pb-4"> {str("You have subscribed to the following topics:")} </p>
-          <span
-            className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
-            {str("#social")}
-          </span>
-          <span
-            className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
-            {str("#academic")}
-          </span>
-          <span
-            className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
-            {str("#free-food")}
-          </span>
+          (
+          self.state.sub_clubs == [||]?
+              <div/>
+              : self.state.sub_clubs[0][0] == "-1" && self.state.sub_tags[0][0] == "-1"?
+                  <div className="w-full text-center py-4">{str("There are no clubs for you to subscribe to.")}</div>
+                  :
+                  Array.map(item => {
+                    incrementId(tableKey);
+                      <button
+                        key={string_of_int(tableKey^)}
+                        value={item[0]}
+                        className="inline-block bg-red-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                        onClick={e => {
+                          self.send(Fetch("get_tagged_events", [|userId,getButtonValueFromEvent(e)|]))
+                          }}
+                        >
+                        {str("#"++item[1])}
+                      </button>
+                  }, self.state.sub_clubs)
+                  |>ReasonReact.array 
+          )
+          (
+          self.state.sub_tags == [||]?
+              <div className="w-full text-center py-4">
+              <i className="fas fa-spinner fa-pulse"></i>
+              <p>{str("Loading subscriptions..")}</p></div>
+              : self.state.sub_clubs[0][0] == "-1" && self.state.sub_tags[0][0] == "-1"?
+                  <div className="w-full text-center py-4">{str("There are no clubs for you to subscribe to.")}</div>
+                  :
+                  Array.map(item => {
+                    incrementId(tableKey);
+                      <button
+                        key={string_of_int(tableKey^)}
+                        value={item[0]}
+                        className="inline-block bg-blue-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                        onClick={e => {
+                          self.send(Fetch("get_tagged_events", [|userId,getButtonValueFromEvent(e)|]))
+                          }}
+                        >
+                        {str("#"++item[1])}
+                      </button>
+                  }, self.state.sub_tags)
+                  |>ReasonReact.array 
+          )
+          <button
+            className="inline-block bg-green-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+            onClick={_e => {
+              self.send(Fetch("chronological_order_events", [|userId|]))
+              }}
+            >{str("Show All Events")}
+          </button>
         </div>
       </div>
-      <div className="md:w-1/3 overflow-hidden w-full p-4">
-        <div className="border border-grey-light">
-          <img
-            className="h-48"
-            src="https://scontent.fcbr1-1.fna.fbcdn.net/v/t1.0-9/28059157_946979332131457_7165184541920598166_n.jpg?_nc_cat=109&_nc_ht=scontent.fcbr1-1.fna&oh=5a6594412643437b10c91ba3e8816b7f&oe=5D3E8D49"
-            alt="Sunset in the mountains"
-          />
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2"> {str("Monash NZSA Trivia Night")} </div>
-            <p className="text-grey-darker text-base"> {str("Sun, Apr 7, 12:00pm-14:00pm")} </p>
-            <p className="text-grey-darker text-base py-2"> {str("E359, 20 Chancellors Walk")} </p>
-          </div>
-          //              </div>
-          <div className="px-6 py-4">
-            <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
-              {str("#hello")}
-            </span>
-            <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
-              {str("#cultural")}
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className="md:w-1/3 overflow-hidden w-full p-4">
-        <div className="border border-grey-light">
-          <img
-            className="h-48"
-            src="https://www.monashclubs.org/CMSModules/Avatars/CMSPages/GetAvatar.aspx?avatarguid=bda7da3e-79c2-4043-a601-c3ec064bb96a&maxsidesize=200"
-            alt="Sunset in the mountains"
-          />
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2"> {str("The Timeless Miracle with Br Jafar Hussain")} </div>
-            <p className="text-grey-darker text-base"> {str("Sun, Apr 7, 12:00pm-14:00pm")} </p>
-            <p className="text-grey-darker text-base py-2"> {str("S1 Lecture Theatre, 16 Rainforest Walk")} </p>
-          </div>
-          //              </div>
-          <div className="px-6 py-4">
-            <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
-              {str("#social")}
-            </span>
-            <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
-              {str("#paid")}
-            </span>
-            <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
-              {str("#competitive")}
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className="md:w-1/3 overflow-hidden w-full p-4">
-        <div className="border border-grey-light">
-          <img
-            className="h-48"
-            src="https://www.monashclubs.org/CMSModules/Avatars/CMSPages/GetAvatar.aspx?avatarguid=15e8b216-7b22-4d76-90dc-b7bebd32d0db&maxsidesize=200"
-            alt="Sunset in the mountains"
-          />
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2"> {str("Oragami Night")} </div>
-            <p className="text-grey-darker text-base"> {str("Sun, Apr 7, 12:00pm-14:00pm")} </p>
-            <p className="text-grey-darker text-base py-2"> {str("Japanese Studies Centre Auditorium")} </p>
-          </div>
-          //              </div>
-          <div className="px-6 py-4">
-            <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
-              {str("#social")}
-            </span>
-            <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
-              {str("#culture")}
-            </span>
-            <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
-              {str("#free-food")}
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className="md:w-1/3 overflow-hidden w-full p-4">
-        <div className="border border-grey-light">
-          <img
-            className="h-48"
-            src="https://www.monashclubs.org/CMSModules/Avatars/CMSPages/GetAvatar.aspx?avatarguid=41671f9b-2184-4fb2-bb4e-92f1683a0d74&maxsidesize=200"
-            alt="Sunset in the mountains"
-          />
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2"> {str("Tech Industry Night")} </div>
-            <p className="text-grey-darker text-base"> {str("Sun, Apr 7, 12:00pm-14:00pm")} </p>
-            <p className="text-grey-darker text-base py-2"> {str("Campus Centre")} </p>
-          </div>
-          //              </div>
-          <div className="px-6 py-4">
-            <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
-              {str("#social")}
-            </span>
-            <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
-              {str("#academic")}
-            </span>
-            <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
-              {str("#free-food")}
-            </span>
-          </div>
-        </div>
-      </div>
+      (
+          self.state.events == [||]?
+              <div className="w-full text-center py-4">
+              <i className="fas fa-spinner fa-pulse"></i>
+              <p>{str("Loading Events..")}</p></div>
+              : self.state.events[0][0].event_id == "-1"?
+                  <div className="w-full text-center py-4">{str("No events available!")}</div>
+                  :
+                  Array.map(arrayOfArrays => {
+                      Array.map(array => {
+                          incrementId(tableKey);
+                          <EventItem 
+                          key=(string_of_int(tableKey^))
+                          item=array
+                          />
+                      }, arrayOfArrays)
+                      |> ReasonReact.array
+                  }, self.state.events)
+                  |>ReasonReact.array 
+      )
     </div>,
 };

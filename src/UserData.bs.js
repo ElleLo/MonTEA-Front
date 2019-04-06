@@ -13,11 +13,109 @@ function idGenerator(param) {
   return /* () */0;
 }
 
+function getProfileData(json) {
+  return /* record */[
+          /* subTags */Json_decode.at(/* :: */[
+                  "result",
+                  /* :: */[
+                    "sub_tags",
+                    /* [] */0
+                  ]
+                ], (function (param) {
+                    return Json_decode.array((function (param) {
+                                  return Json_decode.array(Json_decode.string, param);
+                                }), param);
+                  }))(json),
+          /* subClubs */Json_decode.at(/* :: */[
+                  "result",
+                  /* :: */[
+                    "sub_clubs",
+                    /* [] */0
+                  ]
+                ], (function (param) {
+                    return Json_decode.array((function (param) {
+                                  return Json_decode.array(Json_decode.string, param);
+                                }), param);
+                  }))(json),
+          /* unsubTags */Json_decode.at(/* :: */[
+                  "result",
+                  /* :: */[
+                    "unsub_tags",
+                    /* [] */0
+                  ]
+                ], (function (param) {
+                    return Json_decode.array((function (param) {
+                                  return Json_decode.array(Json_decode.string, param);
+                                }), param);
+                  }))(json),
+          /* unsubClubs */Json_decode.at(/* :: */[
+                  "result",
+                  /* :: */[
+                    "unsub_clubs",
+                    /* [] */0
+                  ]
+                ], (function (param) {
+                    return Json_decode.array((function (param) {
+                                  return Json_decode.array(Json_decode.string, param);
+                                }), param);
+                  }))(json)
+        ];
+}
+
+function getEventData(json) {
+  return /* record */[
+          /* events */Json_decode.at(/* :: */[
+                  "result",
+                  /* :: */[
+                    "events",
+                    /* [] */0
+                  ]
+                ], (function (param) {
+                    return Json_decode.array((function (param) {
+                                  return Json_decode.array(Json_decode.string, param);
+                                }), param);
+                  }))(json),
+          /* sub_tags */Json_decode.at(/* :: */[
+                  "result",
+                  /* :: */[
+                    "sub_tags",
+                    /* [] */0
+                  ]
+                ], (function (param) {
+                    return Json_decode.array((function (param) {
+                                  return Json_decode.array(Json_decode.string, param);
+                                }), param);
+                  }))(json),
+          /* sub_clubs */Json_decode.at(/* :: */[
+                  "result",
+                  /* :: */[
+                    "sub_clubs",
+                    /* [] */0
+                  ]
+                ], (function (param) {
+                    return Json_decode.array((function (param) {
+                                  return Json_decode.array(Json_decode.string, param);
+                                }), param);
+                  }))(json),
+          /* name */Json_decode.at(/* :: */[
+                  "result",
+                  /* :: */[
+                    "name",
+                    /* [] */0
+                  ]
+                ], Json_decode.string)(json)
+        ];
+}
+
 function getLoginValidation(json) {
   return /* record */[/* validation */Json_decode.field("result", Json_decode.$$int, json)];
 }
 
-var Decode = /* module */[/* getLoginValidation */getLoginValidation];
+var Decode = /* module */[
+  /* getProfileData */getProfileData,
+  /* getEventData */getEventData,
+  /* getLoginValidation */getLoginValidation
+];
 
 function jsonRpcRequestPayload(method_, params) {
   var payload = { };

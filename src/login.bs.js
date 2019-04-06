@@ -18,7 +18,7 @@ function reducer(action, state) {
         var params = action[1];
         var method_ = action[0];
         return /* SideEffects */Block.__(1, [(function (self) {
-                      return UserData.fetchData(method_, params, UserData.Decode[/* getLoginValidation */0], state, (function (payload) {
+                      return UserData.fetchData(method_, params, UserData.Decode[/* getLoginValidation */2], state, (function (payload) {
                                     return Curry._1(self[/* send */3], /* Fetched */Block.__(1, [payload]));
                                   }));
                     })]);
@@ -29,13 +29,13 @@ function reducer(action, state) {
                   /* record */[
                     /* username */state[/* username */0],
                     /* password */state[/* password */1],
-                    /* userId */payload[/* validation */0],
+                    /* userId */String(payload[/* validation */0]),
                     /* loginError */match ? "Invalid Login Details" : ""
                   ],
                   (function (self) {
                       var match = self[/* state */1][/* loginError */3] === "";
                       if (match) {
-                        ReactDOMRe.renderToElementWithId(ReasonReact.element(undefined, undefined, App.make(/* array */[])), "root");
+                        ReactDOMRe.renderToElementWithId(ReasonReact.element(undefined, undefined, App.make(self[/* state */1][/* userId */2], /* array */[])), "root");
                         return ReasonReact.Router[/* push */0]("/home");
                       } else {
                         return /* () */0;
@@ -76,12 +76,14 @@ function make(_children) {
               return React.createElement("div", {
                           className: "App"
                         }, React.createElement("div", {
-                              className: "container mx-auto h-full flex justify-center items-center"
+                              className: "container mx-auto h-full w-full flex justify-center align-middle items-center"
                             }, React.createElement("div", {
-                                  className: "w-1/2 text-center py-4"
-                                }, React.createElement("h1", {
+                                  className: "md:w-1/2 w-3/4 text-center py-4"
+                                }, React.createElement("img", {
+                                      src: "https://scontent.fcbr1-1.fna.fbcdn.net/v/t1.15752-0/p280x280/56966759_1271879692960761_6424104639007817728_n.png?_nc_cat=108&_nc_ht=scontent.fcbr1-1.fna&oh=14c3fe43347abfd84770679a3faf1fbc&oe=5D4F37CC"
+                                    }), React.createElement("h1", {
                                       className: "font-hairline mb-6 text-center"
-                                    }, Utils.str("Login to Party Finder")), React.createElement("div", {
+                                    }, Utils.str("Login to MONTEA")), React.createElement("div", {
                                       className: "border-teal p-8 border-t-12 bg-white mb-6 rounded-lg shadow-lg"
                                     }, match ? React.createElement("p", undefined) : React.createElement("p", {
                                             className: "font-sans text-lg text-red-dark text-center"
@@ -89,9 +91,9 @@ function make(_children) {
                                           className: "mb-4"
                                         }, React.createElement("label", {
                                               className: "font-bold text-grey-darker block mb-2"
-                                            }, Utils.str("Username or Email")), React.createElement("input", {
+                                            }, Utils.str("Username")), React.createElement("input", {
                                               className: "block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow",
-                                              placeholder: "Your Username",
+                                              placeholder: "Username",
                                               type: "text",
                                               onChange: (function (e) {
                                                   return Curry._1(self[/* send */3], /* SetUsername */Block.__(2, [Utils.getValueFromEvent(e)]));
@@ -103,7 +105,7 @@ function make(_children) {
                                             }, Utils.str("Password")), React.createElement("input", {
                                               className: "block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow",
                                               placeholder: "Password",
-                                              type: "text",
+                                              type: "password",
                                               onChange: (function (e) {
                                                   return Curry._1(self[/* send */3], /* SetPassword */Block.__(3, [Utils.getValueFromEvent(e)]));
                                                 })
@@ -126,7 +128,7 @@ function make(_children) {
               return /* record */[
                       /* username */"",
                       /* password */"",
-                      /* userId */-1,
+                      /* userId */"-1",
                       /* loginError */""
                     ];
             }),
