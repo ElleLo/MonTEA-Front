@@ -5,7 +5,7 @@ var Utils = require("./Utils.bs.js");
 var React = require("react");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
 
-var component = ReasonReact.statelessComponent("Map");
+var component = ReasonReact.statelessComponent("Profile");
 
 function make(_children) {
   return /* record */[
@@ -19,7 +19,7 @@ function make(_children) {
           /* willUpdate */component[/* willUpdate */7],
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (_self) {
-              return React.createElement("div", undefined, Utils.str("Map"));
+              return React.createElement("div", undefined, Utils.str("Profile"));
             }),
           /* initialState */component[/* initialState */10],
           /* retainedProps */component[/* retainedProps */11],
