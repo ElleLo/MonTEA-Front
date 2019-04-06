@@ -6,5 +6,10 @@ function str(prim) {
   return prim;
 }
 
+function getValueFromEvent($$event) {
+  return $$event.target.value;
+}
+
 exports.str = str;
+exports.getValueFromEvent = getValueFromEvent;
 /* No side effect */

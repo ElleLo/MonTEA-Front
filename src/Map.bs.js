@@ -19,7 +19,9 @@ function make(_children) {
           /* willUpdate */component[/* willUpdate */7],
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (_self) {
-              return React.createElement("div", undefined, Utils.str("Map"));
+              return React.createElement("div", {
+                          id: "map"
+                        }, Utils.str("map"));
             }),
           /* initialState */component[/* initialState */10],
           /* retainedProps */component[/* retainedProps */11],

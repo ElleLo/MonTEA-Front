@@ -29,16 +29,12 @@ let reducer = (action, state) =>
         | Fetched((_state, payload)) => ReasonReact.UpdateWithSideEffects({
             ...state,
             loginError: {
-                    payload.validation == -1? 
+                    payload.validation == 0? 
                         "Invalid Login Details"
-                        : payload.validation == -2?
-                            "This account has been deactivated"
-                            : ""
+                        : ""
                 },
-            userId: {
-                payload.validation != -1 || payload.validation != -2 ? 
-                    payload.validation: 0
-        }}, 
+            userId: {payload.validation}
+            }, 
         (self) =>
                 self.state.loginError == ""?
                     {
@@ -69,7 +65,7 @@ let make = _children => {
           {
             self.state.loginError == ""?
             <p></p>
-            : <p className="font-sans text-lg text-red-dark text-center">{str("Error")}</p>
+            : <p className="font-sans text-lg text-red-dark text-center">{str("Invalid login details")}</p>
           }
           
             <div className="mb-4">
@@ -78,6 +74,7 @@ let make = _children => {
                 className="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow"
                 type_="text"
                 placeholder="Your Username"
+                onChange={ e => self.send(SetUsername(getValueFromEvent(e)))}
               />
             </div>
             <div className="mb-4">
@@ -86,14 +83,13 @@ let make = _children => {
                 type_="text"
                 placeholder="Password"
                 className="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow"
+                onChange={ e => self.send(SetPassword(getValueFromEvent(e)))}
               />
             </div>
             <div className="flex items-center justify-center">
               <button className="block bg-teal-dark hover:bg-teal text-white font-bold py-2 px-4 rounded"
-              onClick={_e => {
-                ReactDOMRe.renderToElementWithId(<App/>, "root",);
-                ReasonReact.Router.push("/home");
-                }}>
+              onClick={_e => self.send(Fetch("authenticate_user", [|self.state.username, self.state.password|]))}
+              >
                 {str("Login")}
               </button>
             </div>

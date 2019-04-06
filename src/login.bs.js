@@ -24,21 +24,13 @@ function reducer(action, state) {
                     })]);
     case 1 : 
         var payload = action[0][1];
-        var match = payload[/* validation */0] !== -1 || payload[/* validation */0] !== -2;
-        var match$1 = payload[/* validation */0] === -1;
-        var tmp;
-        if (match$1) {
-          tmp = "Invalid Login Details";
-        } else {
-          var match$2 = payload[/* validation */0] === -2;
-          tmp = match$2 ? "This account has been deactivated" : "";
-        }
+        var match = payload[/* validation */0] === 0;
         return /* UpdateWithSideEffects */Block.__(2, [
                   /* record */[
                     /* username */state[/* username */0],
                     /* password */state[/* password */1],
-                    /* userId */match ? payload[/* validation */0] : 0,
-                    /* loginError */tmp
+                    /* userId */payload[/* validation */0],
+                    /* loginError */match ? "Invalid Login Details" : ""
                   ],
                   (function (self) {
                       var match = self[/* state */1][/* loginError */3] === "";
@@ -93,14 +85,17 @@ function make(_children) {
                                       className: "border-teal p-8 border-t-12 bg-white mb-6 rounded-lg shadow-lg"
                                     }, match ? React.createElement("p", undefined) : React.createElement("p", {
                                             className: "font-sans text-lg text-red-dark text-center"
-                                          }, Utils.str("Error")), React.createElement("div", {
+                                          }, Utils.str("Invalid login details")), React.createElement("div", {
                                           className: "mb-4"
                                         }, React.createElement("label", {
                                               className: "font-bold text-grey-darker block mb-2"
                                             }, Utils.str("Username or Email")), React.createElement("input", {
                                               className: "block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow",
                                               placeholder: "Your Username",
-                                              type: "text"
+                                              type: "text",
+                                              onChange: (function (e) {
+                                                  return Curry._1(self[/* send */3], /* SetUsername */Block.__(2, [Utils.getValueFromEvent(e)]));
+                                                })
                                             })), React.createElement("div", {
                                           className: "mb-4"
                                         }, React.createElement("label", {
@@ -108,14 +103,22 @@ function make(_children) {
                                             }, Utils.str("Password")), React.createElement("input", {
                                               className: "block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow",
                                               placeholder: "Password",
-                                              type: "text"
+                                              type: "text",
+                                              onChange: (function (e) {
+                                                  return Curry._1(self[/* send */3], /* SetPassword */Block.__(3, [Utils.getValueFromEvent(e)]));
+                                                })
                                             })), React.createElement("div", {
                                           className: "flex items-center justify-center"
                                         }, React.createElement("button", {
                                               className: "block bg-teal-dark hover:bg-teal text-white font-bold py-2 px-4 rounded",
                                               onClick: (function (_e) {
-                                                  ReactDOMRe.renderToElementWithId(ReasonReact.element(undefined, undefined, App.make(/* array */[])), "root");
-                                                  return ReasonReact.Router[/* push */0]("/home");
+                                                  return Curry._1(self[/* send */3], /* Fetch */Block.__(0, [
+                                                                "authenticate_user",
+                                                                /* array */[
+                                                                  self[/* state */1][/* username */0],
+                                                                  self[/* state */1][/* password */1]
+                                                                ]
+                                                              ]));
                                                 })
                                             }, Utils.str("Login")))))));
             }),
