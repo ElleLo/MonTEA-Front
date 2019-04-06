@@ -25,7 +25,7 @@ function make(_children) {
                               className: "App-header"
                             }, React.createElement("h2", undefined)), React.createElement("p", {
                               className: "App-intro"
-                            }, "To get started, edit", React.createElement("code", undefined, " src/app.re "), Utils.str("and save to reload.")));
+                            }, "To get hello, edit", React.createElement("code", undefined, " src/app.re "), Utils.str("and save to reload.")));
             }),
           /* initialState */component[/* initialState */10],
           /* retainedProps */component[/* retainedProps */11],

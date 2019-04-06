@@ -8,7 +8,7 @@ let make = _children => {
     <div className="App">
       <div className="App-header"> <h2 /> </div>
       <p className="App-intro">
-        {ReasonReact.string("To get started, edit")}
+        {ReasonReact.string("To get hello, edit")}
         <code> {ReasonReact.string(" src/app.re ")} </code>
         {str("and save to reload.")}
       </p>
