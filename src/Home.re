@@ -16,11 +16,11 @@ let make = _children => {
           </p>
           <p className="pb-4"> {str("You have subscribed to the following topics:")} </p>
           <span
-            className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker  mr-2 mt-2">
+            className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
             {str("#social")}
           </span>
           <span
-            className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker  mr-2 mt-2">
+            className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
             {str("#academic")}
           </span>
           <span
@@ -44,11 +44,11 @@ let make = _children => {
           //              </div>
           <div className="px-6 py-4">
             <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker  mr-2 mt-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
               {str("#hello")}
             </span>
             <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker  mr-2 mt-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
               {str("#cultural")}
             </span>
           </div>
@@ -69,15 +69,15 @@ let make = _children => {
           //              </div>
           <div className="px-6 py-4">
             <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker  mr-2 mt-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
               {str("#social")}
             </span>
             <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker  mr-2 mt-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
               {str("#paid")}
             </span>
             <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker  mr-2 mt-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
               {str("#competitive")}
             </span>
           </div>
@@ -98,15 +98,15 @@ let make = _children => {
           //              </div>
           <div className="px-6 py-4">
             <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker  mr-2 mt-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
               {str("#social")}
             </span>
             <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker  mr-2 mt-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
               {str("#culture")}
             </span>
             <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker  mr-2 mt-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
               {str("#free-food")}
             </span>
           </div>
@@ -121,21 +121,21 @@ let make = _children => {
           />
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2"> {str("Tech Industry Night")} </div>
-            <p className="text-grey-darker text-base"> {str("un, Apr 7, 12:00pm-14:00pm")} </p>
+            <p className="text-grey-darker text-base"> {str("Sun, Apr 7, 12:00pm-14:00pm")} </p>
             <p className="text-grey-darker text-base py-2"> {str("Campus Centre")} </p>
           </div>
           //              </div>
           <div className="px-6 py-4">
             <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker  mr-2 mt-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
               {str("#social")}
             </span>
             <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker  mr-2 mt-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
               {str("#academic")}
             </span>
             <span
-              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker  mr-2 mt-2">
+              className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
               {str("#free-food")}
             </span>
           </div>

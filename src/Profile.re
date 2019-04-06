@@ -6,10 +6,7 @@ let make = _children => {
   ...component,
   render: _self =>
     <div className="container mx-auto w-full py-10 flex flex-wrap items-stretch">
-      <div className="w-full py-4">
-        <div className="p-4"> <h1 className="py-4"> {str("Profile")} </h1> </div>
-        <p> {str("Here you can manage your subscriptions to particular events")} </p>
-      </div>
+      <div className="w-full py-4"> <div className="p-4"> <h1 className="py-4"> {str("Profile")} </h1> </div> </div>
       <div className="w-full p-4 text-left">
         <h2> {str("Current tags")} </h2>
         <div className="p-2">
