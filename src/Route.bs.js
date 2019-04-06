@@ -3,14 +3,13 @@
 
 var Block = require("bs-platform/lib/js/block.js");
 var Curry = require("bs-platform/lib/js/curry.js");
-var Login = require("./login.bs.js");
 var React = require("react");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
 
 function mapUrlToRoute(url) {
   var match = url[/* path */0];
-  if (match && match[0] === "login" && !match[1]) {
-    return /* Login */0;
+  if (match && match[0] === "app" && !match[1]) {
+    return /* App */0;
   } else {
     return /* NotFound */1;
   }
@@ -46,10 +45,12 @@ function make(_children) {
                           className: "container scrollable-x column is-10"
                         }, match ? React.createElement("div", {
                                 className: "section"
-                              }, "Page does not exist. ") : ReasonReact.element(undefined, undefined, Login.make(/* array */[])));
+                              }, "Page does not exist. ") : React.createElement("div", {
+                                className: "section"
+                              }, "Page does not exist. "));
             }),
           /* initialState */(function (param) {
-              return /* record */[/* route : Login */0];
+              return /* record */[/* route : App */0];
             }),
           /* retainedProps */component[/* retainedProps */11],
           /* reducer */reducer,

@@ -49,3 +49,7 @@ lib/bs/.ninja_log
 lib/bs/.bsdeps
 lib/bs/.bsbuild
 .merlin
+lib/bs/.bsbuild
+lib/bs/.bsdeps
+lib/bs/.ninja_log
+lib/bs/build.ninja
