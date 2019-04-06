@@ -26,8 +26,12 @@ function make(_children) {
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (_self) {
               return React.createElement("div", {
-                          className: "App"
-                        }, ReasonReact.element(undefined, undefined, Route.make(/* array */[])), ReasonReact.element(undefined, undefined, Menu.make(/* array */[])));
+                          className: "App flex mb-5"
+                        }, React.createElement("div", {
+                              className: "md:w-1/5"
+                            }, ReasonReact.element(undefined, undefined, Menu.make(/* array */[]))), React.createElement("div", {
+                              className: "md:w-4/5"
+                            }, ReasonReact.element(undefined, undefined, Route.make(/* array */[]))));
             }),
           /* initialState */component[/* initialState */10],
           /* retainedProps */component[/* retainedProps */11],
