@@ -1,3 +1,3 @@
-src\index.cmj :
-src\Menu.cmj
-src\Menu.cmi
+src/index.cmj :
+src/Menu.cmj
+src/Menu.cmi
