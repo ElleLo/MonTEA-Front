@@ -8,37 +8,10 @@ let make = _children => {
     <div>
       <div className="container mx-auto w-full py-10 tems-stretch">
         <div className="w-full py-4">
-          <div className="p-4"> <h1 className="py-4 font-mono text-orange-dark"> {str("Edit event")} </h1> </div>
-          <p className="px-4"> {str("Edit your existing event to add more information.")} </p>
-        </div>
-        <div className="md:w-1/3 overflow-hidden w-full p-4">
-          <div className="border border-grey-light">
-            <img
-              className="h-48"
-              src="https://scontent.fcbr1-1.fna.fbcdn.net/v/t1.15752-0/p280x280/56966759_1271879692960761_6424104639007817728_n.png?_nc_cat=108&_nc_ht=scontent.fcbr1-1.fna&oh=14c3fe43347abfd84770679a3faf1fbc&oe=5D4F37CC"
-              alt="montea logo"
-            />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2"> {str("MonTEA official Launch")} </div>
-              <p className="text-grey-darker text-base"> {str("Sun, Apr 7, 12:00pm-14:00pm")} </p>
-              <p className="text-grey-darker text-base py-2"> {str("Kenneth Hunt Lawn")} </p>
-            </div>
-            //              </div>
-            <div className="px-6 py-4">
-              <span
-                className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
-                {str("#social")}
-              </span>
-              <span
-                className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
-                {str("#culture")}
-              </span>
-              <span
-                className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
-                {str("#free-food")}
-              </span>
-            </div>
-          </div>
+          <div className="p-4"> <h1 className="py-4 font-mono text-orange-dark"> {str("Create event")} </h1> </div>
+          <p className="px-4">
+            {str("Create events for your club or by yourself. Items marked with asterisk must be filled.")}
+          </p>
         </div>
         <div className="flex flex-wrap p-4">
           <div className="sm:w-1/2 w-full mb-4">
@@ -47,8 +20,8 @@ let make = _children => {
               <input
                 type_="text"
                 name="name"
-                className="flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3 focus:border-blue focus:shadow"
-                value="MonTEA's official launch"
+                className="flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3  focus:border-blue focus:shadow"
+                placeholder="Event Name"
               />
             </div>
           </div>
@@ -58,8 +31,8 @@ let make = _children => {
               <input
                 type_="text"
                 name="name"
-                className="flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3 focus:border-blue focus:shadow"
-                value="MonTEA crew"
+                className="flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3  focus:border-blue focus:shadow"
+                placeholder="Host name"
               />
             </div>
           </div>
@@ -70,7 +43,7 @@ let make = _children => {
                 type_="time"
                 name="name"
                 className="flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3  focus:border-blue focus:shadow"
-                value="12:00:00"
+                placeholder="Start time"
               />
             </div>
           </div>
@@ -81,7 +54,7 @@ let make = _children => {
                 type_="time"
                 name="name"
                 className="flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3  focus:border-blue focus:shadow"
-                value="14:00:00"
+                placeholder="End time"
               />
             </div>
           </div>
@@ -92,7 +65,7 @@ let make = _children => {
                 type_="date"
                 name="name"
                 className="flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3  focus:border-blue focus:shadow"
-                value="2019-04-07"
+                placeholder="Date time"
               />
             </div>
           </div>
@@ -103,7 +76,7 @@ let make = _children => {
                 type_="text"
                 name="name"
                 className="flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3  focus:border-blue focus:shadow"
-                value="Kenneth Hunt Lawn"
+                placeholder="Location"
               />
             </div>
           </div>
@@ -153,7 +126,7 @@ let make = _children => {
           </div>
           <div className="flex items-center justify-center w-full">
             <button className="block bg-orange-dark hover:bg-teal text-white font-bold py-2 px-4 rounded">
-              {str("Update event")}
+              {str("Create event")}
             </button>
           </div>
         </div>

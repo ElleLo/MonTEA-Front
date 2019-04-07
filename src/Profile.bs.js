@@ -200,7 +200,7 @@ function make(userId, _children) {
                             }, React.createElement("div", {
                                   className: "p-4"
                                 }, React.createElement("h1", {
-                                      className: "py-4"
+                                      className: "py-4 font-mono text-orange-dark"
                                     }, Utils.str("Profile")))), React.createElement("div", {
                               className: "w-full p-4 text-left"
                             }, React.createElement("h2", undefined, Utils.str("Subscribed tags")), React.createElement("div", {
