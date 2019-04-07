@@ -47,7 +47,16 @@ function createEventArray(eventList) {
 }
 
 function reducer(action, state) {
-  if (action.tag) {
+  if (typeof action === "number") {
+    return /* Update */Block.__(0, [/* record */[
+                /* data */state[/* data */0],
+                /* events */state[/* events */1],
+                /* name */state[/* name */2],
+                /* sub_tags */state[/* sub_tags */3],
+                /* sub_clubs */state[/* sub_clubs */4],
+                /* sub_loading */!state[/* sub_loading */5]
+              ]]);
+  } else if (action.tag) {
     var payload = action[0][1];
     var match = Caml_array.caml_array_get(Caml_array.caml_array_get(payload[/* events */0], 0), 0) !== "-1";
     return /* Update */Block.__(0, [/* record */[
@@ -55,7 +64,8 @@ function reducer(action, state) {
                 /* events : array */[match ? createEventArray(payload[/* events */0]) : createEventArray(/* array */[])],
                 /* name */payload[/* name */3],
                 /* sub_tags */payload[/* sub_tags */1],
-                /* sub_clubs */payload[/* sub_clubs */2]
+                /* sub_clubs */payload[/* sub_clubs */2],
+                /* sub_loading */false
               ]]);
   } else {
     var params = action[1];
@@ -151,6 +161,7 @@ function make$1(userId, _children) {
                                       className: "inline-block bg-red-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2",
                                       value: Caml_array.caml_array_get(item, 0),
                                       onClick: (function (e) {
+                                          Curry._1(self[/* send */3], /* ChangeLoadingStatus */0);
                                           return Curry._1(self[/* send */3], /* Fetch */Block.__(0, [
                                                         "get_tagged_events",
                                                         /* array */[
@@ -181,6 +192,7 @@ function make$1(userId, _children) {
                                       className: "inline-block bg-blue-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2",
                                       value: Caml_array.caml_array_get(item, 0),
                                       onClick: (function (e) {
+                                          Curry._1(self[/* send */3], /* ChangeLoadingStatus */0);
                                           return Curry._1(self[/* send */3], /* Fetch */Block.__(0, [
                                                         "get_tagged_events",
                                                         /* array */[
@@ -192,24 +204,36 @@ function make$1(userId, _children) {
                                     }, Utils.str("#" + Caml_array.caml_array_get(item, 1)));
                         }), self[/* state */1][/* sub_tags */3]);
               }
-              var match$4 = Caml_obj.caml_equal(self[/* state */1][/* events */1], /* array */[]);
+              var match$4 = self[/* state */1][/* sub_loading */5];
               var tmp$2;
               if (match$4) {
                 tmp$2 = React.createElement("div", {
-                      className: "w-full text-center py-4"
-                    }, React.createElement("i", {
-                          className: "fas fa-spinner fa-pulse"
-                        }), React.createElement("p", undefined, Utils.str("Loading Events..")));
+                      className: "w-full"
+                    }, React.createElement("img", {
+                          className: "items-center",
+                          src: "https://cdn.discordapp.com/attachments/436508647468564491/564131352467996693/shibainu_loading.gif"
+                        }));
               } else {
-                var match$5 = Caml_array.caml_array_get(Caml_array.caml_array_get(self[/* state */1][/* events */1], 0), 0)[/* event_id */0] === "-1";
-                tmp$2 = match$5 ? React.createElement("div", {
+                var match$5 = Caml_obj.caml_equal(self[/* state */1][/* events */1], /* array */[]);
+                var tmp$3;
+                if (match$5) {
+                  tmp$3 = React.createElement("div", {
                         className: "w-full text-center py-4"
-                      }, Utils.str("No events available!")) : $$Array.map((function (arrayOfArrays) {
-                          return $$Array.map((function (array) {
-                                        Utils.incrementId(tableKey);
-                                        return ReasonReact.element(String(tableKey[0]), undefined, make(array, /* array */[]));
-                                      }), arrayOfArrays);
-                        }), self[/* state */1][/* events */1]);
+                      }, React.createElement("i", {
+                            className: "fas fa-spinner fa-pulse"
+                          }), React.createElement("p", undefined, Utils.str("Loading Events..")));
+                } else {
+                  var match$6 = Caml_array.caml_array_get(Caml_array.caml_array_get(self[/* state */1][/* events */1], 0), 0)[/* event_id */0] === "-1";
+                  tmp$3 = match$6 ? React.createElement("div", {
+                          className: "w-full text-center py-4"
+                        }, Utils.str("No events available!")) : $$Array.map((function (arrayOfArrays) {
+                            return $$Array.map((function (array) {
+                                          Utils.incrementId(tableKey);
+                                          return ReasonReact.element(String(tableKey[0]), undefined, make(array, /* array */[]));
+                                        }), arrayOfArrays);
+                          }), self[/* state */1][/* events */1]);
+                }
+                tmp$2 = React.createElement("div", undefined, tmp$3);
               }
               return React.createElement("div", {
                           className: "container mx-auto w-full py-10 flex flex-wrap items-stretch"
@@ -226,6 +250,7 @@ function make$1(userId, _children) {
                                     }, Utils.str("You have subscribed to the following topics:")), tmp, tmp$1, React.createElement("button", {
                                       className: "inline-block bg-green-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2",
                                       onClick: (function (_e) {
+                                          Curry._1(self[/* send */3], /* ChangeLoadingStatus */0);
                                           return Curry._1(self[/* send */3], /* Fetch */Block.__(0, [
                                                         "chronological_order_events",
                                                         /* array */[userId]
@@ -239,7 +264,8 @@ function make$1(userId, _children) {
                       /* events : array */[],
                       /* name */"(Loading User)",
                       /* sub_tags : array */[],
-                      /* sub_clubs : array */[]
+                      /* sub_clubs : array */[],
+                      /* sub_loading */false
                     ];
             }),
           /* retainedProps */component[/* retainedProps */11],

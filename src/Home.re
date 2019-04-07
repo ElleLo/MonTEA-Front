@@ -21,11 +21,13 @@ type state = {
   name: string,
   sub_tags: array(array(string)),
   sub_clubs: array(array(string)),
+  sub_loading: bool
 };
 
 type action =
   | Fetch(string, array(string))
-  | Fetched((state, eventsData));
+  | Fetched((state, eventsData))
+  | ChangeLoadingStatus;
 
 let component = ReasonReact.reducerComponent("Home");
 
@@ -74,7 +76,9 @@ let reducer = (action, state) =>
       name: payload.name,
       sub_tags: payload.sub_tags,
       sub_clubs: payload.sub_clubs,
+      sub_loading: false,
     })
+    | ChangeLoadingStatus => ReasonReact.Update({...state, sub_loading: !state.sub_loading})
   };
 
 module EventItem = {
@@ -114,7 +118,7 @@ module EventItem = {
 
 let make = (~userId, _children) => {
   ...component,
-  initialState: () => {data: None, events: [||], name: "(Loading User)", sub_tags: [||], sub_clubs: [||]},
+  initialState: () => {data: None, events: [||], name: "(Loading User)", sub_tags: [||], sub_clubs: [||], sub_loading: false},
   reducer,
   didMount: self => self.send(Fetch("chronological_order_events", [|userId|])),
   render: self =>
@@ -142,7 +146,8 @@ let make = (~userId, _children) => {
                          value={Array.get(item, 0)}
                          className="inline-block bg-red-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
                          onClick={e =>
-                           self.send(Fetch("get_tagged_events", [|userId, getButtonValueFromEvent(e)|]))
+                            {self.send(ChangeLoadingStatus);
+                           self.send(Fetch("get_tagged_events", [|userId, getButtonValueFromEvent(e)|]))}
                          }>
                          {str("#" ++ item[1])}
                        </button>;
@@ -167,7 +172,8 @@ let make = (~userId, _children) => {
                          value={Array.get(item, 0)}
                          className="inline-block bg-blue-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
                          onClick={e =>
-                           self.send(Fetch("get_tagged_events", [|userId, getButtonValueFromEvent(e)|]))
+                           {self.send(ChangeLoadingStatus);
+                           self.send(Fetch("get_tagged_events", [|userId, getButtonValueFromEvent(e)|]))}
                          }>
                          {str("#" ++ item[1])}
                        </button>;
@@ -177,11 +183,23 @@ let make = (~userId, _children) => {
                    |> ReasonReact.array}
           <button
             className="inline-block bg-green-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-            onClick={_e => self.send(Fetch("chronological_order_events", [|userId|]))}>
+            onClick={_e => 
+            {self.send(ChangeLoadingStatus);
+            self.send(Fetch("chronological_order_events", [|userId|]))}
+            }
+            >
             {str("Show All Events")}
           </button>
         </div>
       </div>
+      (self.state.sub_loading? 
+        <div className="w-full">
+        <img
+          className="items-center"
+          src="https://cdn.discordapp.com/attachments/436508647468564491/564131352467996693/shibainu_loading.gif"
+        />
+        </div>
+         : <div>
       {self.state.events == [||]
          ? <div className="w-full text-center py-4">
              <i className="fas fa-spinner fa-pulse" />
@@ -202,5 +220,6 @@ let make = (~userId, _children) => {
                  self.state.events,
                )
                |> ReasonReact.array}
+            </div>)
     </div>,
 };
