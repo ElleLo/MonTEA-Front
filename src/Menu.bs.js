@@ -26,9 +26,10 @@ function make(_children) {
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (self) {
               var match = self[/* state */1][/* clickedMenu */0] === "Home";
-              var match$1 = self[/* state */1][/* clickedMenu */0] === "YourEvents";
-              var match$2 = self[/* state */1][/* clickedMenu */0] === "Map";
-              var match$3 = self[/* state */1][/* clickedMenu */0] === "Profile";
+              var match$1 = self[/* state */1][/* clickedMenu */0] === "ManageEvents";
+              var match$2 = self[/* state */1][/* clickedMenu */0] === "CreateEvent";
+              var match$3 = self[/* state */1][/* clickedMenu */0] === "Map";
+              var match$4 = self[/* state */1][/* clickedMenu */0] === "Profile";
               return React.createElement("div", {
                           className: "w-full md:w-1/5 bg-black md:bg-black px-2 text-center fixed pin-b md:pt-8 md:pin-t md:pin-l h-16 md:h-screen md:border-r-4 md:border-grey-dark"
                         }, React.createElement("div", {
@@ -54,8 +55,21 @@ function make(_children) {
                                           className: match$1 ? "block py-1 md:py-3 pl-1 align-middle text-white no-underline border-b-2 border-orange-dark" : "block py-1 md:py-3 pl-1 align-middle text-grey-darkest no-underline hover:text-orange border-b-2 border-grey-darkest md:border-black hover:border-orange",
                                           href: "#",
                                           onClick: (function (_e) {
-                                              ReasonReact.Router[/* push */0]("/your-events");
-                                              return Curry._1(self[/* send */3], /* Clicked */["YourEvents"]);
+                                              ReasonReact.Router[/* push */0]("/manage-events");
+                                              return Curry._1(self[/* send */3], /* Clicked */["ManageEvents"]);
+                                            })
+                                        }, React.createElement("i", {
+                                              className: "fas fa-calendar-day pr-0 md:pr-3"
+                                            }), React.createElement("span", {
+                                              className: "pb-1 md:pb-0 text-xs md:text-base text-grey-dark md:text-grey-light block md:inline-block"
+                                            }, Utils.str("Manage Events")))), React.createElement("li", {
+                                      className: "mr-3 flex-1"
+                                    }, React.createElement("a", {
+                                          className: match$2 ? "block py-1 md:py-3 pl-1 align-middle text-white no-underline border-b-2 border-orange-dark" : "block py-1 md:py-3 pl-1 align-middle text-grey-darkest no-underline hover:text-orange border-b-2 border-grey-darkest md:border-black hover:border-orange",
+                                          href: "#",
+                                          onClick: (function (_e) {
+                                              ReasonReact.Router[/* push */0]("/create-event");
+                                              return Curry._1(self[/* send */3], /* Clicked */["CreateEvent"]);
                                             })
                                         }, React.createElement("i", {
                                               className: "fas fa-calendar-day pr-0 md:pr-3"
@@ -64,7 +78,7 @@ function make(_children) {
                                             }, Utils.str("Your Events")))), React.createElement("li", {
                                       className: "mr-3 flex-1"
                                     }, React.createElement("a", {
-                                          className: match$2 ? "block py-1 md:py-3 pl-1 align-middle text-white no-underline border-b-2 border-orange-dark" : "block py-1 md:py-3 pl-1 align-middle text-grey-darkest no-underline hover:text-orange border-b-2 border-grey-darkest md:border-black hover:border-orange",
+                                          className: match$3 ? "block py-1 md:py-3 pl-1 align-middle text-white no-underline border-b-2 border-orange-dark" : "block py-1 md:py-3 pl-1 align-middle text-grey-darkest no-underline hover:text-orange border-b-2 border-grey-darkest md:border-black hover:border-orange",
                                           href: "#",
                                           onClick: (function (_e) {
                                               ReasonReact.Router[/* push */0]("/map");
@@ -77,7 +91,7 @@ function make(_children) {
                                             }, Utils.str("Map")))), React.createElement("li", {
                                       className: "mr-3 flex-1"
                                     }, React.createElement("a", {
-                                          className: match$3 ? "block py-1 md:py-3 pl-1 align-middle text-white no-underline border-b-2 border-orange-dark" : "block py-1 md:py-3 pl-1 align-middle text-grey-darkest no-underline hover:text-orange border-b-2 border-grey-darkest md:border-black hover:border-orange",
+                                          className: match$4 ? "block py-1 md:py-3 pl-1 align-middle text-white no-underline border-b-2 border-orange-dark" : "block py-1 md:py-3 pl-1 align-middle text-grey-darkest no-underline hover:text-orange border-b-2 border-grey-darkest md:border-black hover:border-orange",
                                           href: "#",
                                           onClick: (function (_e) {
                                               ReasonReact.Router[/* push */0]("/profile");

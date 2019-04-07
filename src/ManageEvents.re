@@ -1,6 +1,6 @@
 open Utils;
 
-let component = ReasonReact.statelessComponent("YourEvents");
+let component = ReasonReact.statelessComponent("ManageEvents");
 
 let make = _children => {
   ...component,

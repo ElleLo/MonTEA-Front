@@ -1,6 +1,7 @@
 type route =
   | Home
-  | YourEvents
+  | ManageEvents
+  | CreateEvent
   | Map
   | Profile
   | NotFound;
@@ -13,7 +14,8 @@ type action =
 let mapUrlToRoute = (url: ReasonReact.Router.url) =>
   switch url.path {
   | ["home"] => Home
-  | ["your-events"] => YourEvents
+  | ["manage-events"] => ManageEvents
+  | ["create-event"] => CreateEvent
   | ["map"] => Map
   | ["profile"] => Profile
   | _ => NotFound
@@ -42,7 +44,8 @@ let make = (~userId, _children) => {
     <div className="container scrollable-x column is-10">
       (switch (self.state.route){
         | Home => <Home userId/>
-        | YourEvents => <YourEvents />
+        | ManageEvents => <ManageEvents />
+        | CreateEvent => <CreateEvent />
         | Map => <Map />
         | Profile => <Profile userId/>
         | NotFound => <div className="section">{ReasonReact.string("Page does not exist. ")}</div>

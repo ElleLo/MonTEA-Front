@@ -7,42 +7,49 @@ var Block = require("bs-platform/lib/js/block.js");
 var Curry = require("bs-platform/lib/js/curry.js");
 var React = require("react");
 var Profile = require("./Profile.bs.js");
-var YourEvents = require("./YourEvents.bs.js");
+var CreateEvent = require("./CreateEvent.bs.js");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
+var ManageEvents = require("./ManageEvents.bs.js");
 
 function mapUrlToRoute(url) {
   var match = url[/* path */0];
   if (match) {
     switch (match[0]) {
+      case "create-event" : 
+          if (match[1]) {
+            return /* NotFound */5;
+          } else {
+            return /* CreateEvent */2;
+          }
       case "home" : 
           if (match[1]) {
-            return /* NotFound */4;
+            return /* NotFound */5;
           } else {
             return /* Home */0;
           }
+      case "manage-events" : 
+          if (match[1]) {
+            return /* NotFound */5;
+          } else {
+            return /* ManageEvents */1;
+          }
       case "map" : 
           if (match[1]) {
-            return /* NotFound */4;
+            return /* NotFound */5;
           } else {
-            return /* Map */2;
+            return /* Map */3;
           }
       case "profile" : 
           if (match[1]) {
-            return /* NotFound */4;
+            return /* NotFound */5;
           } else {
-            return /* Profile */3;
-          }
-      case "your-events" : 
-          if (match[1]) {
-            return /* NotFound */4;
-          } else {
-            return /* YourEvents */1;
+            return /* Profile */4;
           }
       default:
-        return /* NotFound */4;
+        return /* NotFound */5;
     }
   } else {
-    return /* NotFound */4;
+    return /* NotFound */5;
   }
 }
 
@@ -78,15 +85,18 @@ function make(userId, _children) {
                     tmp = ReasonReact.element(undefined, undefined, Home.make(userId, /* array */[]));
                     break;
                 case 1 : 
-                    tmp = ReasonReact.element(undefined, undefined, YourEvents.make(/* array */[]));
+                    tmp = ReasonReact.element(undefined, undefined, ManageEvents.make(/* array */[]));
                     break;
                 case 2 : 
-                    tmp = ReasonReact.element(undefined, undefined, $$Map.make(/* array */[]));
+                    tmp = ReasonReact.element(undefined, undefined, CreateEvent.make(/* array */[]));
                     break;
                 case 3 : 
-                    tmp = ReasonReact.element(undefined, undefined, Profile.make(userId, /* array */[]));
+                    tmp = ReasonReact.element(undefined, undefined, $$Map.make(/* array */[]));
                     break;
                 case 4 : 
+                    tmp = ReasonReact.element(undefined, undefined, Profile.make(userId, /* array */[]));
+                    break;
+                case 5 : 
                     tmp = React.createElement("div", {
                           className: "section"
                         }, "Page does not exist. ");

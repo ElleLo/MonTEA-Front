@@ -5,7 +5,7 @@ var Utils = require("./Utils.bs.js");
 var React = require("react");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
 
-var component = ReasonReact.statelessComponent("YourEvents");
+var component = ReasonReact.statelessComponent("ManageEvents");
 
 function make(_children) {
   return /* record */[
