@@ -53,15 +53,20 @@ let make = (~userId, _children) => {
   didMount: self => self.send(Fetch("get_profile_data", [|userId|])),
   render: self =>
     <div className="container mx-auto h-full w-full py-10 flex flex-wrap items-stretch">
-      {self.state.sub_loading
-         ? <img
-             className="flex-initial"
-             src="https://cdn.discordapp.com/attachments/436508647468564491/564131352467996693/shibainu_loading.gif"
-           />
-         : <div />}
       <div className="w-full py-4">
         <div className="p-4"> <h1 className="py-4 font-mono text-orange-dark"> {str("Profile")} </h1> </div>
       </div>
+
+      (self.state.sub_loading? 
+        <div className="w-full">
+        <img
+          className="items-center"
+          src="https://cdn.discordapp.com/attachments/436508647468564491/564131352467996693/shibainu_loading.gif"
+        />
+        </div>
+         : 
+      
+      <div>
       <div className="w-full p-4 text-left">
         <h2> {str("Subscribed tags")} </h2>
         <div className="p-2">
@@ -182,5 +187,7 @@ let make = (~userId, _children) => {
                    |> ReasonReact.array}
         </div>
       </div>
+      </div>
+      )
     </div>,
 };
