@@ -32,7 +32,7 @@ let make = _children => {
               <i className="fas fa-home pr-0 md:pr-3" />
               <span
                 className="pb-1 md:pb-0 text-xs md:text-base text-grey-dark md:text-grey-light block md:inline-block">
-                {str("home")}
+                {str("Home")}
               </span>
             </a>
           </li>

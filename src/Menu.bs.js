@@ -72,10 +72,10 @@ function make(_children) {
                                               return Curry._1(self[/* send */3], /* Clicked */["CreateEvent"]);
                                             })
                                         }, React.createElement("i", {
-                                              className: "fas fa-calendar-day pr-0 md:pr-3"
+                                              className: "fas fa-plus pr-0 md:pr-3"
                                             }), React.createElement("span", {
                                               className: "pb-1 md:pb-0 text-xs md:text-base text-grey-dark md:text-grey-light block md:inline-block"
-                                            }, Utils.str("Your Events")))), React.createElement("li", {
+                                            }, Utils.str("Create Events")))), React.createElement("li", {
                                       className: "mr-3 flex-1"
                                     }, React.createElement("a", {
                                           className: match$3 ? "block py-1 md:py-3 pl-1 align-middle text-white no-underline border-b-2 border-orange-dark" : "block py-1 md:py-3 pl-1 align-middle text-grey-darkest no-underline hover:text-orange border-b-2 border-grey-darkest md:border-black hover:border-orange",
