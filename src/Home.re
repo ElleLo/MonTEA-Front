@@ -11,7 +11,8 @@ type eventInfo = {
   event_endTime: string,
   event_image: string,
   event_host: string,
-  event_tags: array(string)
+  event_tags: array(string),
+  event_venue: string
 }
 
 type state = {
@@ -38,7 +39,8 @@ let createEventArray = (eventList) => {
         event_endTime: "",
         event_image: "",
         event_host: "",
-        event_tags: [||]
+        event_tags: [||],
+        event_venue: ""
     }|]
     :Array.map(array => {
         event_id: array[0],
@@ -50,7 +52,8 @@ let createEventArray = (eventList) => {
         event_host: array[3],
         event_tags: {
           Js.String.split(",", Js.String.slice(0, Js.String.length(array[10])-1, array[10]))
-          }
+          },
+          event_venue: array[4]
     }, eventList)
 };
 
@@ -88,7 +91,7 @@ module EventItem = {
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2"> {str(item.event_name)} </div>
             <p className="text-grey-darker text-base"> {str(item.event_date ++ ", " ++ item.event_startTime ++ " - " ++ item.event_endTime)} </p>
-            <p className="text-grey-darker text-base py-2"> {str("E359, 20 Chancellors Walk")} </p>
+            <p className="text-grey-darker text-base py-2"> {str(item.event_venue)} </p>
           </div>
           <div className="px-6 py-4">
             (

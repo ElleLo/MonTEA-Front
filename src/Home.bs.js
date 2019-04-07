@@ -26,7 +26,8 @@ function createEventArray(eventList) {
               /* event_endTime */"",
               /* event_image */"",
               /* event_host */"",
-              /* event_tags : array */[]
+              /* event_tags : array */[],
+              /* event_venue */""
             ]];
   } else {
     return $$Array.map((function (array) {
@@ -38,7 +39,8 @@ function createEventArray(eventList) {
                           /* event_endTime */Caml_array.caml_array_get(array, 6),
                           /* event_image */Caml_array.caml_array_get(array, 9),
                           /* event_host */Caml_array.caml_array_get(array, 3),
-                          /* event_tags */Caml_array.caml_array_get(array, 10).slice(0, Caml_array.caml_array_get(array, 10).length - 1 | 0).split(",")
+                          /* event_tags */Caml_array.caml_array_get(array, 10).slice(0, Caml_array.caml_array_get(array, 10).length - 1 | 0).split(","),
+                          /* event_venue */Caml_array.caml_array_get(array, 4)
                         ];
                 }), eventList);
   }
@@ -95,7 +97,7 @@ function make(item, _children) {
                                       className: "text-grey-darker text-base"
                                     }, Utils.str(item[/* event_date */2] + (", " + (item[/* event_startTime */3] + (" - " + item[/* event_endTime */4]))))), React.createElement("p", {
                                       className: "text-grey-darker text-base py-2"
-                                    }, Utils.str("E359, 20 Chancellors Walk"))), React.createElement("div", {
+                                    }, Utils.str(item[/* event_venue */8]))), React.createElement("div", {
                                   className: "px-6 py-4"
                                 }, $$Array.map((function (item) {
                                         Utils.incrementId(tableKey);
