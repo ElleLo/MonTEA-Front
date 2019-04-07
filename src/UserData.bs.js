@@ -129,7 +129,7 @@ function jsonRpcRequestPayload(method_, params) {
 }
 
 function fetchData(method_, params, decodeType, update, callback) {
-  fetch("http://104.248.39.188:4000", Fetch.RequestInit[/* make */0](/* Post */2, {
+  fetch("http://localhost:4000", Fetch.RequestInit[/* make */0](/* Post */2, {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "*",
                     "Access-Control-Allow-Methods": "GET, POST"

@@ -66,166 +66,158 @@ function make(userId, _children) {
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (self) {
               var match = self[/* state */1][/* sub_loading */5];
+              var match$1 = Caml_obj.caml_equal(self[/* state */1][/* subTags */1], /* array */[]);
               var tmp;
-              if (match) {
+              if (match$1) {
                 tmp = React.createElement("div", {
-                      className: "w-full"
-                    }, React.createElement("img", {
-                          className: "items-center",
-                          src: "https://cdn.discordapp.com/attachments/436508647468564491/564131352467996693/shibainu_loading.gif"
-                        }));
+                      className: "w-full text-center py-4"
+                    }, React.createElement("i", {
+                          className: "fas fa-spinner fa-pulse"
+                        }), React.createElement("p", undefined, Utils.str("Loading data..")));
               } else {
-                var match$1 = Caml_obj.caml_equal(self[/* state */1][/* subTags */1], /* array */[]);
-                var tmp$1;
-                if (match$1) {
-                  tmp$1 = React.createElement("div", {
+                var match$2 = Caml_array.caml_array_get(Caml_array.caml_array_get(self[/* state */1][/* subTags */1], 0), 0) === "-1";
+                tmp = match$2 ? React.createElement("div", {
                         className: "w-full text-center py-4"
-                      }, React.createElement("i", {
-                            className: "fas fa-spinner fa-pulse"
-                          }), React.createElement("p", undefined, Utils.str("Loading data..")));
-                } else {
-                  var match$2 = Caml_array.caml_array_get(Caml_array.caml_array_get(self[/* state */1][/* subTags */1], 0), 0) === "-1";
-                  tmp$1 = match$2 ? React.createElement("div", {
-                          className: "w-full text-center py-4"
-                        }, Utils.str("You are not subscribed to any tags.")) : $$Array.map((function (item) {
-                            Utils.incrementId(tableKey);
-                            return React.createElement("button", {
-                                        key: String(tableKey[0]),
-                                        className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2",
-                                        value: Caml_array.caml_array_get(item, 0),
-                                        onClick: (function (e) {
-                                            Curry._1(self[/* send */3], /* ChangeLoadingStatus */0);
-                                            return Curry._1(self[/* send */3], /* Fetch */Block.__(0, [
-                                                          "remove_sub_tags",
-                                                          /* array */[
-                                                            userId,
-                                                            Utils.getButtonValueFromEvent(e)
-                                                          ]
-                                                        ]));
-                                          })
-                                      }, Utils.str("#" + Caml_array.caml_array_get(item, 1)));
-                          }), self[/* state */1][/* subTags */1]);
-                }
-                var match$3 = Caml_obj.caml_equal(self[/* state */1][/* subClubs */2], /* array */[]);
-                var tmp$2;
-                if (match$3) {
-                  tmp$2 = React.createElement("div", {
+                      }, Utils.str("You are not subscribed to any tags.")) : $$Array.map((function (item) {
+                          Utils.incrementId(tableKey);
+                          return React.createElement("button", {
+                                      key: String(tableKey[0]),
+                                      className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2",
+                                      value: Caml_array.caml_array_get(item, 0),
+                                      onClick: (function (e) {
+                                          Curry._1(self[/* send */3], /* ChangeLoadingStatus */0);
+                                          return Curry._1(self[/* send */3], /* Fetch */Block.__(0, [
+                                                        "remove_sub_tags",
+                                                        /* array */[
+                                                          userId,
+                                                          Utils.getButtonValueFromEvent(e)
+                                                        ]
+                                                      ]));
+                                        })
+                                    }, Utils.str("#" + Caml_array.caml_array_get(item, 1)));
+                        }), self[/* state */1][/* subTags */1]);
+              }
+              var match$3 = Caml_obj.caml_equal(self[/* state */1][/* subClubs */2], /* array */[]);
+              var tmp$1;
+              if (match$3) {
+                tmp$1 = React.createElement("div", {
+                      className: "w-full text-center py-4"
+                    }, React.createElement("i", {
+                          className: "fas fa-spinner fa-pulse"
+                        }), React.createElement("p", undefined, Utils.str("Loading data..")));
+              } else {
+                var match$4 = Caml_array.caml_array_get(Caml_array.caml_array_get(self[/* state */1][/* subClubs */2], 0), 0) === "-1";
+                tmp$1 = match$4 ? React.createElement("div", {
                         className: "w-full text-center py-4"
-                      }, React.createElement("i", {
-                            className: "fas fa-spinner fa-pulse"
-                          }), React.createElement("p", undefined, Utils.str("Loading data..")));
-                } else {
-                  var match$4 = Caml_array.caml_array_get(Caml_array.caml_array_get(self[/* state */1][/* subClubs */2], 0), 0) === "-1";
-                  tmp$2 = match$4 ? React.createElement("div", {
-                          className: "w-full text-center py-4"
-                        }, Utils.str("You are not subscribed to any clubs.")) : $$Array.map((function (item) {
-                            Utils.incrementId(tableKey);
-                            return React.createElement("button", {
-                                        key: String(tableKey[0]),
-                                        className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2",
-                                        value: Caml_array.caml_array_get(item, 0),
-                                        onClick: (function (e) {
-                                            Curry._1(self[/* send */3], /* ChangeLoadingStatus */0);
-                                            return Curry._1(self[/* send */3], /* Fetch */Block.__(0, [
-                                                          "remove_sub_clubs",
-                                                          /* array */[
-                                                            userId,
-                                                            Utils.getButtonValueFromEvent(e)
-                                                          ]
-                                                        ]));
-                                          })
-                                      }, Utils.str("#" + Caml_array.caml_array_get(item, 1)));
-                          }), self[/* state */1][/* subClubs */2]);
-                }
-                var match$5 = Caml_obj.caml_equal(self[/* state */1][/* unsubTags */3], /* array */[]);
-                var tmp$3;
-                if (match$5) {
-                  tmp$3 = React.createElement("div", {
+                      }, Utils.str("You are not subscribed to any clubs.")) : $$Array.map((function (item) {
+                          Utils.incrementId(tableKey);
+                          return React.createElement("button", {
+                                      key: String(tableKey[0]),
+                                      className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2",
+                                      value: Caml_array.caml_array_get(item, 0),
+                                      onClick: (function (e) {
+                                          Curry._1(self[/* send */3], /* ChangeLoadingStatus */0);
+                                          return Curry._1(self[/* send */3], /* Fetch */Block.__(0, [
+                                                        "remove_sub_clubs",
+                                                        /* array */[
+                                                          userId,
+                                                          Utils.getButtonValueFromEvent(e)
+                                                        ]
+                                                      ]));
+                                        })
+                                    }, Utils.str("#" + Caml_array.caml_array_get(item, 1)));
+                        }), self[/* state */1][/* subClubs */2]);
+              }
+              var match$5 = Caml_obj.caml_equal(self[/* state */1][/* unsubTags */3], /* array */[]);
+              var tmp$2;
+              if (match$5) {
+                tmp$2 = React.createElement("div", {
+                      className: "w-full text-center py-4"
+                    }, React.createElement("i", {
+                          className: "fas fa-spinner fa-pulse"
+                        }), React.createElement("p", undefined, Utils.str("Loading data..")));
+              } else {
+                var match$6 = Caml_array.caml_array_get(Caml_array.caml_array_get(self[/* state */1][/* unsubTags */3], 0), 0) === "-1";
+                tmp$2 = match$6 ? React.createElement("div", {
                         className: "w-full text-center py-4"
-                      }, React.createElement("i", {
-                            className: "fas fa-spinner fa-pulse"
-                          }), React.createElement("p", undefined, Utils.str("Loading data..")));
-                } else {
-                  var match$6 = Caml_array.caml_array_get(Caml_array.caml_array_get(self[/* state */1][/* unsubTags */3], 0), 0) === "-1";
-                  tmp$3 = match$6 ? React.createElement("div", {
-                          className: "w-full text-center py-4"
-                        }, Utils.str("There are no tags for you to subscribe to.")) : $$Array.map((function (item) {
-                            Utils.incrementId(tableKey);
-                            return React.createElement("button", {
-                                        key: String(tableKey[0]),
-                                        className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2",
-                                        value: Caml_array.caml_array_get(item, 0),
-                                        onClick: (function (e) {
-                                            Curry._1(self[/* send */3], /* ChangeLoadingStatus */0);
-                                            return Curry._1(self[/* send */3], /* Fetch */Block.__(0, [
-                                                          "update_sub_tags",
-                                                          /* array */[
-                                                            userId,
-                                                            Utils.getButtonValueFromEvent(e)
-                                                          ]
-                                                        ]));
-                                          })
-                                      }, Utils.str("#" + Caml_array.caml_array_get(item, 1)));
-                          }), self[/* state */1][/* unsubTags */3]);
-                }
-                var match$7 = Caml_obj.caml_equal(self[/* state */1][/* unsubClubs */4], /* array */[]);
-                var tmp$4;
-                if (match$7) {
-                  tmp$4 = React.createElement("div", {
+                      }, Utils.str("There are no tags for you to subscribe to.")) : $$Array.map((function (item) {
+                          Utils.incrementId(tableKey);
+                          return React.createElement("button", {
+                                      key: String(tableKey[0]),
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2",
+                                      value: Caml_array.caml_array_get(item, 0),
+                                      onClick: (function (e) {
+                                          Curry._1(self[/* send */3], /* ChangeLoadingStatus */0);
+                                          return Curry._1(self[/* send */3], /* Fetch */Block.__(0, [
+                                                        "update_sub_tags",
+                                                        /* array */[
+                                                          userId,
+                                                          Utils.getButtonValueFromEvent(e)
+                                                        ]
+                                                      ]));
+                                        })
+                                    }, Utils.str("#" + Caml_array.caml_array_get(item, 1)));
+                        }), self[/* state */1][/* unsubTags */3]);
+              }
+              var match$7 = Caml_obj.caml_equal(self[/* state */1][/* unsubClubs */4], /* array */[]);
+              var tmp$3;
+              if (match$7) {
+                tmp$3 = React.createElement("div", {
+                      className: "w-full text-center py-4"
+                    }, React.createElement("i", {
+                          className: "fas fa-spinner fa-pulse"
+                        }), React.createElement("p", undefined, Utils.str("Loading data..")));
+              } else {
+                var match$8 = Caml_array.caml_array_get(Caml_array.caml_array_get(self[/* state */1][/* unsubClubs */4], 0), 0) === "-1";
+                tmp$3 = match$8 ? React.createElement("div", {
                         className: "w-full text-center py-4"
-                      }, React.createElement("i", {
-                            className: "fas fa-spinner fa-pulse"
-                          }), React.createElement("p", undefined, Utils.str("Loading data..")));
-                } else {
-                  var match$8 = Caml_array.caml_array_get(Caml_array.caml_array_get(self[/* state */1][/* unsubClubs */4], 0), 0) === "-1";
-                  tmp$4 = match$8 ? React.createElement("div", {
-                          className: "w-full text-center py-4"
-                        }, Utils.str("There are no clubs for you to subscribe to.")) : $$Array.map((function (item) {
-                            Utils.incrementId(tableKey);
-                            return React.createElement("button", {
-                                        key: String(tableKey[0]),
-                                        className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2",
-                                        value: Caml_array.caml_array_get(item, 0),
-                                        onClick: (function (e) {
-                                            Curry._1(self[/* send */3], /* ChangeLoadingStatus */0);
-                                            return Curry._1(self[/* send */3], /* Fetch */Block.__(0, [
-                                                          "update_sub_clubs",
-                                                          /* array */[
-                                                            userId,
-                                                            Utils.getButtonValueFromEvent(e)
-                                                          ]
-                                                        ]));
-                                          })
-                                      }, Utils.str("#" + Caml_array.caml_array_get(item, 1)));
-                          }), self[/* state */1][/* unsubClubs */4]);
-                }
-                tmp = React.createElement("div", undefined, React.createElement("div", {
-                          className: "w-full p-4 text-left"
-                        }, React.createElement("h2", undefined, Utils.str("Subscribed tags")), React.createElement("div", {
-                              className: "p-2"
-                            }, tmp$1)), React.createElement("div", {
-                          className: "w-full p-4 text-left"
-                        }, React.createElement("h2", undefined, Utils.str("Subscribed clubs")), React.createElement("div", {
-                              className: "p-2"
-                            }, tmp$2)), React.createElement("div", {
-                          className: "w-full p-4 text-left"
-                        }, React.createElement("h2", undefined, Utils.str("Unsubscribed tags")), React.createElement("div", {
-                              className: "p-2"
-                            }, tmp$3)), React.createElement("div", {
-                          className: "w-full p-4 text-left"
-                        }, React.createElement("h2", undefined, Utils.str("Unsubscribed clubs")), React.createElement("div", {
-                              className: "p-2"
-                            }, tmp$4)));
+                      }, Utils.str("There are no clubs for you to subscribe to.")) : $$Array.map((function (item) {
+                          Utils.incrementId(tableKey);
+                          return React.createElement("button", {
+                                      key: String(tableKey[0]),
+                                      className: "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2",
+                                      value: Caml_array.caml_array_get(item, 0),
+                                      onClick: (function (e) {
+                                          Curry._1(self[/* send */3], /* ChangeLoadingStatus */0);
+                                          return Curry._1(self[/* send */3], /* Fetch */Block.__(0, [
+                                                        "update_sub_clubs",
+                                                        /* array */[
+                                                          userId,
+                                                          Utils.getButtonValueFromEvent(e)
+                                                        ]
+                                                      ]));
+                                        })
+                                    }, Utils.str("#" + Caml_array.caml_array_get(item, 1)));
+                        }), self[/* state */1][/* unsubClubs */4]);
               }
               return React.createElement("div", {
                           className: "container mx-auto h-full w-full py-10 flex flex-wrap items-stretch"
-                        }, React.createElement("div", {
+                        }, match ? React.createElement("img", {
+                                className: "flex-initial",
+                                src: "https://cdn.discordapp.com/attachments/436508647468564491/564131352467996693/shibainu_loading.gif"
+                              }) : React.createElement("div", undefined), React.createElement("div", {
                               className: "w-full py-4"
                             }, React.createElement("div", {
                                   className: "p-4"
                                 }, React.createElement("h1", {
                                       className: "py-4 font-mono text-orange-dark"
-                                    }, Utils.str("Profile")))), tmp);
+                                    }, Utils.str("Profile")))), React.createElement("div", {
+                              className: "w-full p-4 text-left"
+                            }, React.createElement("h2", undefined, Utils.str("Subscribed tags")), React.createElement("div", {
+                                  className: "p-2"
+                                }, tmp)), React.createElement("div", {
+                              className: "w-full p-4 text-left"
+                            }, React.createElement("h2", undefined, Utils.str("Subscribed clubs")), React.createElement("div", {
+                                  className: "p-2"
+                                }, tmp$1)), React.createElement("div", {
+                              className: "w-full p-4 text-left"
+                            }, React.createElement("h2", undefined, Utils.str("Unsubscribed tags")), React.createElement("div", {
+                                  className: "p-2"
+                                }, tmp$2)), React.createElement("div", {
+                              className: "w-full p-4 text-left"
+                            }, React.createElement("h2", undefined, Utils.str("Unsubscribed clubs")), React.createElement("div", {
+                                  className: "p-2"
+                                }, tmp$3)));
             }),
           /* initialState */(function (param) {
               return /* record */[
