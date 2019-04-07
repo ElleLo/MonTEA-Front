@@ -48,11 +48,11 @@ function make(_children) {
                                             }, Utils.str("Kenneth Hunt Lawn"))), React.createElement("div", {
                                           className: "px-6 py-4"
                                         }, React.createElement("span", {
-                                              className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                              className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
                                             }, Utils.str("#social")), React.createElement("span", {
-                                              className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+                                              className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
                                             }, Utils.str("#culture")), React.createElement("span", {
-                                              className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+                                              className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2"
                                             }, Utils.str("#free-food"))))), React.createElement("div", {
                                   className: "flex flex-wrap p-4"
                                 }, React.createElement("div", {
@@ -164,6 +164,28 @@ function make(_children) {
                                               className: "flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3  focus:border-blue focus:shadow",
                                               name: "name",
                                               placeholder: "Facebook",
+                                              type: "text"
+                                            }))), React.createElement("div", {
+                                      className: "w-full mb-4"
+                                    }, React.createElement("div", {
+                                          className: "sm:p-3"
+                                        }, React.createElement("p", {
+                                              className: "text-left pb-2"
+                                            }, Utils.str("Image")), React.createElement("input", {
+                                              className: "flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3 pt-1 focus:border-blue focus:shadow",
+                                              accept: "image/png, image/jpeg",
+                                              name: "name",
+                                              type: "file"
+                                            }))), React.createElement("div", {
+                                      className: "w-full mb-4"
+                                    }, React.createElement("div", {
+                                          className: "sm:p-3"
+                                        }, React.createElement("p", {
+                                              className: "text-left pb-2"
+                                            }, Utils.str("Tags")), React.createElement("input", {
+                                              className: "flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3  focus:border-blue focus:shadow",
+                                              name: "name",
+                                              placeholder: "tags",
                                               type: "text"
                                             }))), React.createElement("div", {
                                       className: "flex items-center justify-center w-full"
