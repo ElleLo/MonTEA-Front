@@ -26,15 +26,15 @@ let make = _children => {
             //              </div>
             <div className="px-6 py-4">
               <span
-                className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
+                className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2">
                 {str("#social")}
               </span>
               <span
-                className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
+                className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2">
                 {str("#culture")}
               </span>
               <span
-                className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">
+                className="inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 mt-2">
                 {str("#free-food")}
               </span>
             </div>
@@ -148,6 +148,28 @@ let make = _children => {
                 name="name"
                 className="flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3  focus:border-blue focus:shadow"
                 placeholder="Facebook"
+              />
+            </div>
+          </div>
+          <div className="w-full mb-4">
+            <div className="sm:p-3">
+              <p className="text-left pb-2"> {str("Image")} </p>
+              <input
+                type_="file"
+                name="name"
+                className="flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3 pt-1 focus:border-blue focus:shadow"
+                accept="image/png, image/jpeg"
+              />
+            </div>
+          </div>
+          <div className="w-full mb-4">
+            <div className="sm:p-3">
+              <p className="text-left pb-2"> {str("Tags")} </p>
+              <input
+                type_="text"
+                name="name"
+                className="flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3  focus:border-blue focus:shadow"
+                placeholder="tags"
               />
             </div>
           </div>
