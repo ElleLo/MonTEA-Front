@@ -27,33 +27,9 @@ function make(_children) {
                                       className: "p-4"
                                     }, React.createElement("h1", {
                                           className: "py-4 font-mono text-orange-dark"
-                                        }, Utils.str("Edit event"))), React.createElement("p", {
+                                        }, Utils.str("Create event"))), React.createElement("p", {
                                       className: "px-4"
-                                    }, Utils.str("Edit your existing event to add more information."))), React.createElement("div", {
-                                  className: "md:w-1/3 overflow-hidden w-full p-4"
-                                }, React.createElement("div", {
-                                      className: "border border-grey-light"
-                                    }, React.createElement("img", {
-                                          className: "h-48",
-                                          alt: "montea logo",
-                                          src: "https://scontent.fcbr1-1.fna.fbcdn.net/v/t1.15752-0/p280x280/56966759_1271879692960761_6424104639007817728_n.png?_nc_cat=108&_nc_ht=scontent.fcbr1-1.fna&oh=14c3fe43347abfd84770679a3faf1fbc&oe=5D4F37CC"
-                                        }), React.createElement("div", {
-                                          className: "px-6 py-4"
-                                        }, React.createElement("div", {
-                                              className: "font-bold text-xl mb-2"
-                                            }, Utils.str("MonTEA official Launch")), React.createElement("p", {
-                                              className: "text-grey-darker text-base"
-                                            }, Utils.str("Sun, Apr 7, 12:00pm-14:00pm")), React.createElement("p", {
-                                              className: "text-grey-darker text-base py-2"
-                                            }, Utils.str("Kenneth Hunt Lawn"))), React.createElement("div", {
-                                          className: "px-6 py-4"
-                                        }, React.createElement("span", {
-                                              className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                                            }, Utils.str("#social")), React.createElement("span", {
-                                              className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                                            }, Utils.str("#culture")), React.createElement("span", {
-                                              className: "inline-block bg-orange-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
-                                            }, Utils.str("#free-food"))))), React.createElement("div", {
+                                    }, Utils.str("Create events for your club or by yourself. Items marked with asterisk must be filled."))), React.createElement("div", {
                                   className: "flex flex-wrap p-4"
                                 }, React.createElement("div", {
                                       className: "sm:w-1/2 w-full mb-4"
@@ -62,10 +38,10 @@ function make(_children) {
                                         }, React.createElement("p", {
                                               className: "text-left pb-2"
                                             }, Utils.str("Event Name *")), React.createElement("input", {
-                                              className: "flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3 focus:border-blue focus:shadow",
+                                              className: "flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3  focus:border-blue focus:shadow",
                                               name: "name",
-                                              type: "text",
-                                              value: "MonTEA's official launch"
+                                              placeholder: "Event Name",
+                                              type: "text"
                                             }))), React.createElement("div", {
                                       className: "sm:w-1/2 w-full mb-4"
                                     }, React.createElement("div", {
@@ -73,10 +49,10 @@ function make(_children) {
                                         }, React.createElement("p", {
                                               className: "text-left pb-2"
                                             }, Utils.str("Host *")), React.createElement("input", {
-                                              className: "flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3 focus:border-blue focus:shadow",
+                                              className: "flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3  focus:border-blue focus:shadow",
                                               name: "name",
-                                              type: "text",
-                                              value: "MonTEA crew"
+                                              placeholder: "Host name",
+                                              type: "text"
                                             }))), React.createElement("div", {
                                       className: "sm:w-1/3 w-full mb-4"
                                     }, React.createElement("div", {
@@ -86,8 +62,8 @@ function make(_children) {
                                             }, Utils.str("Start time *")), React.createElement("input", {
                                               className: "flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3  focus:border-blue focus:shadow",
                                               name: "name",
-                                              type: "time",
-                                              value: "12:00:00"
+                                              placeholder: "Start time",
+                                              type: "time"
                                             }))), React.createElement("div", {
                                       className: "sm:w-1/3 w-full mb-4"
                                     }, React.createElement("div", {
@@ -97,8 +73,8 @@ function make(_children) {
                                             }, Utils.str("End time *")), React.createElement("input", {
                                               className: "flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3  focus:border-blue focus:shadow",
                                               name: "name",
-                                              type: "time",
-                                              value: "14:00:00"
+                                              placeholder: "End time",
+                                              type: "time"
                                             }))), React.createElement("div", {
                                       className: "sm:w-1/3 w-full mb-4"
                                     }, React.createElement("div", {
@@ -108,8 +84,8 @@ function make(_children) {
                                             }, Utils.str("Date *")), React.createElement("input", {
                                               className: "flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3  focus:border-blue focus:shadow",
                                               name: "name",
-                                              type: "date",
-                                              value: "2019-04-07"
+                                              placeholder: "Date time",
+                                              type: "date"
                                             }))), React.createElement("div", {
                                       className: "w-full mb-4"
                                     }, React.createElement("div", {
@@ -119,8 +95,8 @@ function make(_children) {
                                             }, Utils.str("Location *")), React.createElement("input", {
                                               className: "flex flex-wrap w-full  leading-normal w-px border h-10 border-grey-light rounded px-3  focus:border-blue focus:shadow",
                                               name: "name",
-                                              type: "text",
-                                              value: "Kenneth Hunt Lawn"
+                                              placeholder: "Location",
+                                              type: "text"
                                             }))), React.createElement("div", {
                                       className: "sm:w-1/2 w-full mb-4"
                                     }, React.createElement("div", {
@@ -169,7 +145,7 @@ function make(_children) {
                                       className: "flex items-center justify-center w-full"
                                     }, React.createElement("button", {
                                           className: "block bg-orange-dark hover:bg-teal text-white font-bold py-2 px-4 rounded"
-                                        }, Utils.str("Update event"))))));
+                                        }, Utils.str("Create event"))))));
             }),
           /* initialState */component[/* initialState */10],
           /* retainedProps */component[/* retainedProps */11],

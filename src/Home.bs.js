@@ -216,7 +216,7 @@ function make$1(userId, _children) {
                             }, React.createElement("div", {
                                   className: "p-4"
                                 }, React.createElement("h1", {
-                                      className: "py-4"
+                                      className: "py-4 font-mono text-orange-dark"
                                     }, Utils.str("Welcome to MONTEA, " + self[/* state */1][/* name */2])), React.createElement("p", {
                                       className: ""
                                     }, Utils.str("There are lots of great events coming up this week! Here are a selection of the events coming up this week based on your subscriptions.")), React.createElement("p", {
