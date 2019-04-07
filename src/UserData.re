@@ -63,7 +63,7 @@ let jsonRpcRequestPayload = (method, params) => {
 let fetchData = (method, params, decodeType, update, callback) => 
     Js.Promise.(
         Fetch.fetchWithInit(
-            "http://http://104.248.39.188:4000",
+            "http://104.248.39.188:4000",
             Fetch.RequestInit.make(
                 ~method_=Post,
                 ~body=Fetch.BodyInit.make(Js.Json.stringify(Js.Json.object_(jsonRpcRequestPayload(method, params)))),
