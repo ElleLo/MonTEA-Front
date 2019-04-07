@@ -1,18 +1,18 @@
 ####{BSB GENERATED: NO EDIT
-FLG -ppx "C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\bs-platform\lib\reactjs_jsx_ppx_2.exe"
-FLG -ppx C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\bs-platform\lib\bsppx.exe
-S C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\bs-platform\lib\ocaml
-B C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\bs-platform\lib\ocaml
+FLG -ppx '/Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/bs-platform/lib/reactjs_jsx_ppx_2.exe'
+FLG -ppx /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/bs-platform/lib/bsppx.exe
+S /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/bs-platform/lib/ocaml
+B /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/bs-platform/lib/ocaml
 FLG -nostdlib -color always
 FLG -w -30-40+6+7+27+32..39+44+45+101
-S C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\reason-react\lib\ocaml
-B C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\reason-react\lib\ocaml
-S C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\@glennsl\bs-jest\lib\ocaml
-B C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\@glennsl\bs-jest\lib\ocaml
-S C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\bs-fetch\lib\ocaml
-B C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\bs-fetch\lib\ocaml
-S C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\@glennsl\bs-json\lib\ocaml
-B C:\Users\Anna\Documents\Projects\PartyFinder\node_modules\@glennsl\bs-json\lib\ocaml
+S /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/reason-react/lib/ocaml
+B /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/reason-react/lib/ocaml
+S /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/@glennsl/bs-jest/lib/ocaml
+B /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/@glennsl/bs-jest/lib/ocaml
+S /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/bs-fetch/lib/ocaml
+B /Users/elhj/Documents/Hackamon2019/MPF/PartyFinder/node_modules/bs-fetch/lib/ocaml
+S /Users/elhj/node_modules/@glennsl/bs-json/lib/ocaml
+B /Users/elhj/node_modules/@glennsl/bs-json/lib/ocaml
 S src
-B lib\bs\src
+B lib/bs/src
 ####BSB GENERATED: NO EDIT}

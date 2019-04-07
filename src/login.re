@@ -6,13 +6,15 @@ type state = {
   password: string,
   userId: string,
   loginError: string,
+  loginClicked: bool,
 };
 
 type action =
   | Fetch(string, array(string))
   | Fetched((state, loginValidationData))
   | SetUsername(string)
-  | SetPassword(string);
+  | SetPassword(string)
+  | EnableLoading;
 
 let component = ReasonReact.reducerComponent("Login");
 
@@ -32,6 +34,7 @@ let reducer = (action, state) =>
         userId: {
           string_of_int(payload.validation);
         },
+        loginClicked: false
       },
       self =>
         self.state.loginError == ""
@@ -43,11 +46,12 @@ let reducer = (action, state) =>
     )
   | SetUsername(username) => ReasonReact.Update({...state, username})
   | SetPassword(password) => ReasonReact.Update({...state, password})
+  | EnableLoading => ReasonReact.Update({...state, loginClicked: true})
   };
 
 let make = _children => {
   ...component,
-  initialState: () => {username: "", password: "", loginError: "", userId: "-1"},
+  initialState: () => {username: "", password: "", loginError: "", userId: "-1", loginClicked: false},
   reducer,
   render: self =>
     <div className="">
@@ -82,8 +86,13 @@ let make = _children => {
             <div className="flex items-center justify-center">
               <button
                 className="block bg-orange-dark hover:bg-orange text-white font-bold py-2 px-4 rounded"
-                onClick={_e => self.send(Fetch("authenticate_user", [|self.state.username, self.state.password|]))}>
+                 onClick={_e => {self.send(EnableLoading); self.send(Fetch("authenticate_user", [|self.state.username, self.state.password|]))}}>
                 {str("Login")}
+                (
+                  self.state.loginClicked ? 
+                  <i className="fas fa-spinner fa-pulse" />
+                  : <div/>
+                )
               </button>
             </div>
           </div>

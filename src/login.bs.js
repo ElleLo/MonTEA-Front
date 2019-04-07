@@ -13,50 +13,63 @@ var ReasonReact = require("reason-react/src/ReasonReact.js");
 var component = ReasonReact.reducerComponent("Login");
 
 function reducer(action, state) {
-  switch (action.tag | 0) {
-    case 0 : 
-        var params = action[1];
-        var method_ = action[0];
-        return /* SideEffects */Block.__(1, [(function (self) {
-                      return UserData.fetchData(method_, params, UserData.Decode[/* getLoginValidation */2], state, (function (payload) {
-                                    return Curry._1(self[/* send */3], /* Fetched */Block.__(1, [payload]));
-                                  }));
-                    })]);
-    case 1 : 
-        var payload = action[0][1];
-        var match = payload[/* validation */0] === 0;
-        return /* UpdateWithSideEffects */Block.__(2, [
-                  /* record */[
-                    /* username */state[/* username */0],
-                    /* password */state[/* password */1],
-                    /* userId */String(payload[/* validation */0]),
-                    /* loginError */match ? "Invalid Login Details" : ""
-                  ],
-                  (function (self) {
-                      var match = self[/* state */1][/* loginError */3] === "";
-                      if (match) {
-                        ReactDOMRe.renderToElementWithId(ReasonReact.element(undefined, undefined, App.make(self[/* state */1][/* userId */2], /* array */[])), "root");
-                        return ReasonReact.Router[/* push */0]("/home");
-                      } else {
-                        return /* () */0;
-                      }
-                    })
-                ]);
-    case 2 : 
-        return /* Update */Block.__(0, [/* record */[
-                    /* username */action[0],
-                    /* password */state[/* password */1],
-                    /* userId */state[/* userId */2],
-                    /* loginError */state[/* loginError */3]
-                  ]]);
-    case 3 : 
-        return /* Update */Block.__(0, [/* record */[
-                    /* username */state[/* username */0],
-                    /* password */action[0],
-                    /* userId */state[/* userId */2],
-                    /* loginError */state[/* loginError */3]
-                  ]]);
-    
+  if (typeof action === "number") {
+    return /* Update */Block.__(0, [/* record */[
+                /* username */state[/* username */0],
+                /* password */state[/* password */1],
+                /* userId */state[/* userId */2],
+                /* loginError */state[/* loginError */3],
+                /* loginClicked */true
+              ]]);
+  } else {
+    switch (action.tag | 0) {
+      case 0 : 
+          var params = action[1];
+          var method_ = action[0];
+          return /* SideEffects */Block.__(1, [(function (self) {
+                        return UserData.fetchData(method_, params, UserData.Decode[/* getLoginValidation */2], state, (function (payload) {
+                                      return Curry._1(self[/* send */3], /* Fetched */Block.__(1, [payload]));
+                                    }));
+                      })]);
+      case 1 : 
+          var payload = action[0][1];
+          var match = payload[/* validation */0] === 0;
+          return /* UpdateWithSideEffects */Block.__(2, [
+                    /* record */[
+                      /* username */state[/* username */0],
+                      /* password */state[/* password */1],
+                      /* userId */String(payload[/* validation */0]),
+                      /* loginError */match ? "Invalid Login Details" : "",
+                      /* loginClicked */false
+                    ],
+                    (function (self) {
+                        var match = self[/* state */1][/* loginError */3] === "";
+                        if (match) {
+                          ReactDOMRe.renderToElementWithId(ReasonReact.element(undefined, undefined, App.make(self[/* state */1][/* userId */2], /* array */[])), "root");
+                          return ReasonReact.Router[/* push */0]("/home");
+                        } else {
+                          return /* () */0;
+                        }
+                      })
+                  ]);
+      case 2 : 
+          return /* Update */Block.__(0, [/* record */[
+                      /* username */action[0],
+                      /* password */state[/* password */1],
+                      /* userId */state[/* userId */2],
+                      /* loginError */state[/* loginError */3],
+                      /* loginClicked */state[/* loginClicked */4]
+                    ]]);
+      case 3 : 
+          return /* Update */Block.__(0, [/* record */[
+                      /* username */state[/* username */0],
+                      /* password */action[0],
+                      /* userId */state[/* userId */2],
+                      /* loginError */state[/* loginError */3],
+                      /* loginClicked */state[/* loginClicked */4]
+                    ]]);
+      
+    }
   }
 }
 
@@ -73,6 +86,7 @@ function make(_children) {
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (self) {
               var match = self[/* state */1][/* loginError */3] === "";
+              var match$1 = self[/* state */1][/* loginClicked */4];
               return React.createElement("div", {
                           className: ""
                         }, React.createElement("div", {
@@ -114,6 +128,7 @@ function make(_children) {
                                         }, React.createElement("button", {
                                               className: "block bg-orange-dark hover:bg-orange text-white font-bold py-2 px-4 rounded",
                                               onClick: (function (_e) {
+                                                  Curry._1(self[/* send */3], /* EnableLoading */0);
                                                   return Curry._1(self[/* send */3], /* Fetch */Block.__(0, [
                                                                 "authenticate_user",
                                                                 /* array */[
@@ -122,14 +137,17 @@ function make(_children) {
                                                                 ]
                                                               ]));
                                                 })
-                                            }, Utils.str("Login")))))));
+                                            }, Utils.str("Login"), match$1 ? React.createElement("i", {
+                                                    className: "fas fa-spinner fa-pulse"
+                                                  }) : React.createElement("div", undefined)))))));
             }),
           /* initialState */(function (param) {
               return /* record */[
                       /* username */"",
                       /* password */"",
                       /* userId */"-1",
-                      /* loginError */""
+                      /* loginError */"",
+                      /* loginClicked */false
                     ];
             }),
           /* retainedProps */component[/* retainedProps */11],
