@@ -1,9 +1,8 @@
 node_modules
 .idea
 .vscode
-/lib/*
+lib/*
 .merlin
 /build/
-!/lib/js/*
 *.log
-.merlin
+*.bs.js
