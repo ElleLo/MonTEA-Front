@@ -1,4 +1,4 @@
-<p align="center"><img src="https://scontent.fmel5-1.fna.fbcdn.net/v/t1.15752-0/p280x280/56966759_1271879692960761_6424104639007817728_n.png?_nc_cat=108&_nc_ht=scontent.fmel5-1.fna&oh=f33aac6f4ac813e0570ccf61ed06a601&oe=5D4F37CC" /></p>
+<p align="center"><img src="https://cdn.discordapp.com/attachments/472944686743420938/756121422761558026/MONTEA_LOGO.png" /></p>
 
 Events portal web app created using Reason-React and TailwindCSS.
 
